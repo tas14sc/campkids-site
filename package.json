@@ -1,0 +1,11 @@
+{
+  "name": "campkids-coming-soon",
+  "version": "1.0.0",
+  "description": "Camp Kids coming soon page",
+  "scripts": {
+    "start": "serve . -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}
