@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camp Kids — Elevating Expectations</title>
+  <title>Meet the Camp Kids — The Characters</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Lora:ital,wght@0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --green-deep:   #1c4a2e;
       --green-mid:    #2a6640;
@@ -23,7 +22,6 @@
       --cream:        #f7f1e3;
       --ink:          #1a1510;
     }
-
     html { scroll-behavior: smooth; }
     body { font-family: 'Nunito', sans-serif; background: var(--green-deep); color: var(--cream); overflow-x: hidden; }
 
@@ -41,363 +39,112 @@
     .nav-wordmark { font-family: 'Boogaloo', cursive; font-size: 24px; letter-spacing: 0.03em; color: var(--cream); }
     .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--tan); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--cream); }
+    .nav-links a:hover, .nav-links a.active { color: var(--cream); }
     .nav-shop-btn { background: var(--red) !important; color: var(--cream) !important; padding: 8px 22px; border-radius: 2px; }
     .nav-shop-btn:hover { background: var(--red-warm) !important; }
 
-    /* ── NIGHT SKY ── */
-    .hero-night { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-    .star {
-      position: absolute; border-radius: 50%; background: #fff;
-      animation: twinkle var(--dur, 3s) var(--delay, 0s) infinite ease-in-out;
-    }
-    @keyframes twinkle {
-      0%, 100% { opacity: var(--min-op, 0.15); transform: scale(1); }
-      50%       { opacity: var(--max-op, 0.85); transform: scale(1.4); }
-    }
-    .firefly {
-      position: absolute; border-radius: 50%; width: 4px; height: 4px;
-      background: rgba(190, 255, 110, 0.95);
-      box-shadow: 0 0 7px 3px rgba(160, 255, 80, 0.55);
-      animation: ffloat var(--fdur, 7s) var(--fdelay, 0s) infinite ease-in-out;
-    }
-    @keyframes ffloat {
-      0%   { transform: translate(0,0) scale(1); opacity: 0; }
-      15%  { opacity: 1; }
-      50%  { transform: translate(var(--fx,18px), calc(var(--fy,-70px) * .5)) scale(1.3); }
-      85%  { opacity: 0.5; }
-      100% { transform: translate(var(--fx,18px), var(--fy,-70px)) scale(0.7); opacity: 0; }
-    }
-
     /* ── HERO ── */
     .hero {
-      background: var(--green-deep);
-      position: relative;
+      background: var(--green-deep); position: relative;
       display: flex; flex-direction: column; align-items: center;
-      overflow: hidden;
-      padding-top: 68px;
+      overflow: hidden; padding-top: 68px;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
       background-image:
-        repeating-linear-gradient(45deg,  rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 10px),
         repeating-linear-gradient(-45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 10px);
     }
-
-    .hero-img-wrap {
-      position: relative; width: 100%; max-width: 1100px;
-      margin: 0 auto; z-index: 1;
-    }
-    .hero-illustration {
-      width: 100%; height: auto; display: block;
-      filter: drop-shadow(0 20px 70px rgba(0,0,0,0.55));
-    }
-
-    .hero-patch-wrap {
-      position: absolute; bottom: -65px; left: 50%; transform: translateX(-50%);
-      width: 136px; height: 136px; z-index: 10;
-      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.55));
-      animation: patchDrop 1s 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
-    }
-    @keyframes patchDrop {
-      from { transform: translateX(-50%) scale(0.2) rotate(-20deg); opacity: 0; }
-      to   { transform: translateX(-50%) scale(1)   rotate(0deg);   opacity: 1; }
-    }
-
     .hero-text {
       position: relative; z-index: 2; text-align: center;
-      width: 100%; max-width: 860px; margin: 0 auto;
-      padding: 108px 32px 52px;
+      width: 100%; max-width: 780px; margin: 0 auto;
+      padding: 72px 32px 44px;
     }
-    .hero-kicker {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase;
-      color: var(--green-light); margin-bottom: 18px;
-      animation: riseIn 0.6s 0.6s both;
-    }
-    .hero-h1 {
-      font-family: 'Boogaloo', cursive;
-      font-size: clamp(60px, 10vw, 116px); line-height: 0.91;
-      color: var(--cream); margin-bottom: 16px;
-      text-shadow: 4px 6px 0 rgba(0,0,0,0.38);
-      animation: riseIn 0.6s 0.7s both;
-    }
-    .hero-h1 em { font-style: normal; color: var(--red); display: block; }
-    .hero-script {
-      font-family: 'Lora', serif; font-style: italic;
-      font-size: clamp(19px,2.6vw,28px); color: var(--tan);
-      margin-bottom: 26px; animation: riseIn 0.6s 0.8s both;
-    }
-    .hero-desc {
-      font-size: 17px; line-height: 1.78; color: rgba(247,241,227,0.74);
-      max-width: 640px; margin: 0 auto 44px;
-      animation: riseIn 0.6s 0.9s both;
-    }
-    .hero-btns {
-      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-      animation: riseIn 0.6s 1s both;
-    }
-    @keyframes riseIn {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
+    .hero-kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--green-light); margin-bottom: 18px; }
+    .hero-h1 { font-family: 'Boogaloo', cursive; font-size: clamp(52px,8vw,92px); line-height: 0.95; color: var(--cream); margin-bottom: 14px; text-shadow: 3px 5px 0 rgba(0,0,0,0.38); }
+    .hero-h1 em { font-style: normal; color: var(--red); }
+    .hero-script { font-family: 'Lora', serif; font-style: italic; font-size: clamp(17px,2.4vw,24px); color: var(--tan); margin-bottom: 22px; }
+    .hero-desc { font-size: 16px; line-height: 1.75; color: rgba(247,241,227,0.72); max-width: 580px; margin: 0 auto; }
     .hero-trees { position: relative; z-index: 1; display: block; width: 100%; flex-shrink: 0; }
 
-    /* ── BUTTONS ── */
-    .btn {
-      display: inline-block; font-family: 'Nunito', sans-serif; font-size: 13px;
-      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      text-decoration: none; padding: 15px 38px; border-radius: 2px;
-      cursor: pointer; border: 2px solid transparent; transition: all 0.18s;
-    }
-    .btn-red {
-      background: var(--red); color: var(--cream); border-color: var(--red);
-      box-shadow: 0 4px 18px rgba(184,41,26,0.38);
-    }
-    .btn-red:hover { background: var(--red-warm); border-color: var(--red-warm); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: var(--cream); border-color: rgba(247,241,227,0.35); }
-    .btn-outline:hover { border-color: var(--cream); background: rgba(247,241,227,0.08); }
-    .btn-bark { background: var(--bark); color: var(--cream); border-color: var(--bark); }
-    .btn-bark:hover { background: var(--bark-mid); transform: translateY(-2px); }
-
-    /* ── QUOTE BAND ── */
-    .quote-band {
-      background: var(--bark); padding: 52px 40px; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .quote-band::before {
-      content: ''; position: absolute; inset: 0;
-      background: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,0,0,0.06) 60px, rgba(0,0,0,0.06) 62px);
-    }
-    .quote-band blockquote {
-      font-family: 'Lora', serif; font-style: italic;
-      font-size: clamp(18px,2.6vw,27px); color: var(--cream);
-      max-width: 720px; margin: 0 auto; line-height: 1.55; position: relative;
-    }
-    .quote-band blockquote::before {
-      content: '\201C'; font-size: 80px; line-height: 0.6; color: rgba(200,160,106,0.3);
-      position: absolute; top: -8px; left: -20px; font-family: 'Lora', serif;
-    }
-    .quote-band cite {
-      display: block; margin-top: 20px; font-family: 'Nunito', sans-serif;
-      font-style: normal; font-size: 12px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--tan);
-    }
-
-    /* ── WORLD SECTION ── */
-    .world-section {
-      background: var(--parchment); padding: 100px 40px 80px;
-      position: relative; color: var(--ink);
-    }
-    .world-section::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    /* ── CARD GRID ── */
+    .cards-section { background: var(--parchment); padding: 64px 40px 80px; }
+    .cards-section::before {
+      content: ''; display: block; height: 5px; margin: -64px -40px 64px;
       background: repeating-linear-gradient(90deg, var(--parchment-dk) 0px, var(--parchment) 4px, var(--parchment-dk) 8px, var(--parchment) 12px);
     }
-
-    .islands { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1020px; margin: 0 auto; }
-    .island-card {
+    .card-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 20px; max-width: 1060px; margin: 0 auto;
+    }
+    .char-card {
       background: var(--cream); border: 1px solid var(--parchment-dk); border-radius: 2px;
-      padding: 32px 28px; position: relative; overflow: hidden;
-      cursor: pointer; transition: transform 0.22s, box-shadow 0.22s;
+      overflow: hidden; cursor: pointer;
+      transition: transform 0.22s, box-shadow 0.22s;
     }
-    .island-card:hover { transform: translateY(-5px); box-shadow: 0 10px 32px rgba(26,21,16,0.12); }
-    .island-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-    .isl-red::after   { background: var(--red); }
-    .isl-green::after { background: var(--green-mid); }
-    .isl-blue::after  { background: #2a6080; }
-    .isl-tan::after   { background: var(--bark-mid); }
-    .island-roman {
-      font-family: 'Lora', serif; font-size: 52px; font-weight: 600;
-      color: rgba(26,21,16,0.07); position: absolute; top: 12px; right: 20px; line-height: 1;
-    }
-    .island-name { font-family: 'Lora', serif; font-style: italic; font-size: 22px; color: var(--ink); margin-bottom: 3px; }
-    .island-theme { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; }
-    .isl-red   .island-theme { color: var(--red); }
-    .isl-green .island-theme { color: var(--green-mid); }
-    .isl-blue  .island-theme { color: #2a6080; }
-    .isl-tan   .island-theme { color: var(--bark-mid); }
-    .island-desc { font-size: 14px; line-height: 1.65; color: rgba(26,21,16,0.65); }
+    .char-card:hover { transform: translateY(-5px); box-shadow: 0 10px 32px rgba(26,21,16,0.14); }
 
-    /* ── TREASURE MAP ── */
-    .treasure-map-wrap {
-      max-width: 1020px; margin: 0 auto; position: relative;
-      border-radius: 4px; overflow: hidden;
-      box-shadow: 0 12px 48px rgba(26,21,16,0.22);
+    /* Image area — shows placeholder color, replaced by real image when file exists */
+    .char-img {
+      width: 100%; height: 220px;
+      background-color: var(--cream);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px;
     }
-    .treasure-map-wrap img { width: 100%; height: auto; display: block; }
-    .map-zones {
+    .char-img img {
+      width: 100%; height: 100%; object-fit: contain; object-position: center bottom;
+      display: block;
+    }
+    /* Placeholder shown while image is missing */
+    .char-img-placeholder {
       position: absolute; inset: 0;
-      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Boogaloo', cursive; font-size: 48px;
+      color: rgba(26,21,16,0.15); background: var(--parchment-dk);
     }
-    .map-zone { cursor: pointer; position: relative; transition: background 0.2s; }
-    .map-zone:hover { background: rgba(184,41,26,0.08); outline: 3px solid rgba(184,41,26,0.35); outline-offset: -3px; }
-    .map-zone-label {
-      position: absolute; bottom: 12px; left: 8px; right: 8px;
-      background: rgba(26,21,16,0.75); backdrop-filter: blur(4px);
-      color: var(--cream); font-family: 'Lora', serif; font-style: italic;
-      font-size: 13px; padding: 7px 10px; border-radius: 2px; text-align: center;
-      opacity: 0; transition: opacity 0.2s; pointer-events: none;
-    }
-    .map-zone:hover .map-zone-label { opacity: 1; }
+    /* Hide placeholder once real image loads */
+    .char-img img.loaded + .char-img-placeholder,
+    .char-img img:not([src=""]) + .char-img-placeholder { display: none; }
 
-    /* ── ISLAND MODAL ── */
-    .island-modal-overlay {
+    .char-body { padding: 18px 16px 20px; }
+    .char-name { font-family: 'Boogaloo', cursive; font-size: 20px; color: var(--ink); margin-bottom: 3px; }
+    .char-theme { font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
+    .char-desc { font-family: 'Lora', serif; font-style: italic; font-size: 13px; line-height: 1.55; color: rgba(26,21,16,0.62); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
       display: none; position: fixed; inset: 0; z-index: 500;
       background: rgba(20,35,22,0.82); backdrop-filter: blur(6px);
       align-items: center; justify-content: center; padding: 24px;
     }
-    .island-modal-overlay.open { display: flex; }
-    .island-modal {
-      background: var(--cream); border-radius: 2px; max-width: 520px; width: 100%;
-      position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.5); overflow: hidden;
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--cream); border-radius: 2px; max-width: 600px; width: 100%;
+      max-height: 90vh; overflow-y: auto; position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
     }
-    .island-modal-top { height: 8px; }
-    .island-modal-body { padding: 36px 36px 40px; }
-    .island-modal-roman { font-family: 'Lora', serif; font-size: 72px; font-weight: 600; color: rgba(26,21,16,0.07); line-height: 1; margin-bottom: -16px; }
-    .island-modal-name { font-family: 'Lora', serif; font-style: italic; font-size: 32px; color: var(--ink); margin-bottom: 6px; }
-    .island-modal-theme { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; }
-    .island-modal-divider { width: 40px; height: 2px; background: var(--tan); margin-bottom: 20px; }
-    .island-modal-desc { font-size: 15px; line-height: 1.8; color: rgba(26,21,16,0.72); }
-    .island-modal-close {
-      position: absolute; top: 14px; right: 14px; width: 34px; height: 34px;
-      border-radius: 50%; background: rgba(26,21,16,0.1); border: none; cursor: pointer;
+    .modal-img {
+      width: 100%; height: 280px;
+      background-color: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px;
+    }
+    .modal-img img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block; }
+    .modal-body { padding: 28px 32px 36px; }
+    .modal-name { font-family: 'Boogaloo', cursive; font-size: 36px; color: var(--ink); margin-bottom: 3px; }
+    .modal-role { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bark-mid); margin-bottom: 4px; }
+    .modal-theme { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+    .modal-divider { width: 40px; height: 2px; background: var(--tan); margin-bottom: 20px; }
+    .modal-bio { font-size: 15px; line-height: 1.8; color: rgba(26,21,16,0.75); }
+    .modal-close {
+      position: absolute; top: 14px; right: 14px;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(26,21,16,0.12); border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       font-size: 18px; color: var(--ink); transition: background 0.15s;
     }
-    .island-modal-close:hover { background: rgba(26,21,16,0.2); }
-
-    .chars-strip { max-width: 1060px; margin: 80px auto 0; }
-    .chars-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 40px; }
-    .char-card {
-      background: var(--cream); border: 1px solid var(--parchment-dk); border-radius: 2px;
-      padding: 26px 18px 22px; text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .char-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(26,21,16,0.1); }
-    .char-circle {
-      width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 14px;
-      display: flex; align-items: center; justify-content: center;
-      border: 2px solid var(--parchment-dk);
-    }
-    .char-name { font-family: 'Boogaloo', cursive; font-size: 18px; color: var(--ink); margin-bottom: 4px; }
-    .char-role { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 10px; }
-    .char-quote { font-family: 'Lora', serif; font-style: italic; font-size: 12.5px; line-height: 1.55; color: rgba(26,21,16,0.6); }
-
-    /* ── CHARS STRIP LINK ── */
-    .chars-link-wrap {
-      display: block; text-decoration: none; margin-top: 40px; position: relative;
-    }
-    .chars-link-overlay {
-      position: absolute; inset: -10px; border-radius: 4px;
-      border: 2px dashed rgba(184,41,26,0.0); transition: border-color 0.2s;
-      pointer-events: none;
-    }
-    .chars-link-wrap:hover .chars-link-overlay { border-color: rgba(184,41,26,0.25); }
-    .chars-link-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-    .chars-link-card {
-      background: var(--cream); border: 1px solid var(--parchment-dk); border-radius: 2px;
-      overflow: hidden; transition: transform 0.22s, box-shadow 0.22s;
-    }
-    .chars-link-wrap:hover .chars-link-card { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(26,21,16,0.13); }
-    .chars-link-img {
-      width: 100%; height: 190px; background: var(--parchment-dk);
-      overflow: hidden;
-    }
-    .chars-link-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .chars-link-body { padding: 16px 16px 18px; }
-    .chars-link-name { font-family: 'Boogaloo', cursive; font-size: 20px; color: var(--ink); margin-bottom: 3px; }
-    .chars-link-theme { font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-    .chars-link-desc { font-family: 'Lora', serif; font-style: italic; font-size: 12.5px; line-height: 1.55; color: rgba(26,21,16,0.6); }
-    .chars-cta {
-      display: block; text-align: center; margin-top: 30px;
-      font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--red);
-    }
-    .chars-link-wrap:hover .chars-cta { text-decoration: underline; }
-
-    /* ── ABOUT SECTION ── */
-    .about-section { background: var(--green-deep); padding: 100px 40px; position: relative; }
-    .about-section::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-      background: repeating-linear-gradient(90deg, transparent 0px, transparent 8px, rgba(200,160,106,0.25) 8px, rgba(200,160,106,0.25) 10px);
-    }
-    .about-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; max-width: 1060px; margin: 0 auto; align-items: center; }
-    .about-text p { font-size: 16px; line-height: 1.8; color: rgba(247,241,227,0.75); margin-bottom: 22px; }
-    .about-text p:last-of-type { margin-bottom: 32px; }
-    .about-text strong { color: var(--cream); }
-    .creds-panel { background: var(--parchment); border-radius: 2px; padding: 36px 32px; color: var(--ink); position: relative; }
-    .creds-panel::after {
-      content: ''; position: absolute; bottom: 0; right: 0;
-      width: 0; height: 0; border-style: solid;
-      border-width: 0 0 28px 28px; border-color: transparent transparent var(--green-deep) var(--parchment-dk);
-    }
-    .creds-name { font-family: 'Boogaloo', cursive; font-size: 26px; color: var(--ink); margin-bottom: 2px; }
-    .creds-title { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 24px; }
-    .creds-divider { width: 40px; height: 2px; background: var(--tan); margin-bottom: 24px; }
-    .creds-list { list-style: none; }
-    .creds-list li {
-      font-size: 13.5px; line-height: 1.5; color: rgba(26,21,16,0.75);
-      padding: 11px 0; border-bottom: 1px solid rgba(26,21,16,0.1);
-      display: flex; gap: 10px; align-items: flex-start;
-    }
-    .creds-list li:last-child { border-bottom: none; }
-    .cred-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-mid); flex-shrink: 0; margin-top: 5px; }
-
-    /* ── SHOP SECTION ── */
-    .shop-section { background: var(--parchment); padding: 100px 40px; color: var(--ink); }
-    .shop-tabs {
-      display: flex; border-bottom: 2px solid var(--parchment-dk); margin-bottom: 52px;
-      max-width: 480px; margin-left: auto; margin-right: auto;
-    }
-    .stab {
-      flex: 1; padding: 12px 0; text-align: center; font-size: 12px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; background: none; border: none;
-      cursor: pointer; color: rgba(26,21,16,0.45);
-      border-bottom: 3px solid transparent; margin-bottom: -2px; transition: color 0.2s, border-color 0.2s;
-    }
-    .stab.active { color: var(--red); border-bottom-color: var(--red); }
-    .stab:not(.active):hover { color: var(--ink); }
-    .products { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; max-width: 1020px; margin: 0 auto; }
-    .product-card {
-      background: var(--cream); border: 1px solid var(--parchment-dk); border-radius: 2px;
-      overflow: hidden; transition: transform 0.22s, box-shadow 0.22s;
-    }
-    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(26,21,16,0.12); }
-    .product-img { height: 190px; display: flex; align-items: center; justify-content: center; position: relative; }
-    .pi-green { background: var(--green-deep); }
-    .pi-bark  { background: var(--bark); }
-    .pi-tan   { background: linear-gradient(140deg, var(--bark) 0%, var(--tan) 100%); }
-    .pi-label { font-family: 'Boogaloo', cursive; font-size: 28px; color: rgba(247,241,227,0.9); text-align: center; padding: 0 20px; line-height: 1.2; }
-    .pi-badge { position: absolute; top: 12px; right: 12px; background: var(--red); color: var(--cream); font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 9px; border-radius: 1px; }
-    .product-body { padding: 20px 22px 24px; }
-    .product-name { font-family: 'Boogaloo', cursive; font-size: 20px; color: var(--ink); margin-bottom: 6px; }
-    .product-desc { font-size: 13px; line-height: 1.6; color: rgba(26,21,16,0.6); margin-bottom: 18px; }
-    .product-row { display: flex; align-items: center; justify-content: space-between; }
-    .product-price { font-family: 'Boogaloo', cursive; font-size: 24px; color: var(--bark); }
-    .btn-sm {
-      font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 18px;
-      background: var(--red); color: var(--cream); border: none; border-radius: 2px;
-      cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.15s;
-    }
-    .btn-sm:hover { background: var(--red-warm); }
-
-    /* ── SOCIAL SECTION ── */
-    .social-section { background: var(--green-deep); padding: 90px 40px; text-align: center; position: relative; }
-    .social-section::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-      background: repeating-linear-gradient(90deg, transparent 0px, transparent 8px, rgba(200,160,106,0.25) 8px, rgba(200,160,106,0.25) 10px);
-    }
-    .soc-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 44px; }
-    .soc-btn {
-      display: flex; align-items: center; gap: 9px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(200,160,106,0.28);
-      color: var(--cream); font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.08em; padding: 13px 26px; border-radius: 2px;
-      text-decoration: none; transition: background 0.2s, border-color 0.2s, transform 0.15s;
-    }
-    .soc-btn:hover { background: rgba(255,255,255,0.11); border-color: rgba(200,160,106,0.6); transform: translateY(-2px); }
-    .soc-btn svg { width: 17px; height: 17px; }
+    .modal-close:hover { background: rgba(26,21,16,0.22); }
 
     /* ── FOOTER ── */
     footer { background: var(--ink); padding: 52px 40px 36px; text-align: center; border-top: 1px solid rgba(200,160,106,0.12); }
@@ -408,34 +155,15 @@
     .footer-links a:hover { color: var(--tan); }
     .footer-copy { font-size: 11px; color: rgba(247,241,227,0.2); }
 
-    /* ── SHARED SECTION HEADER ── */
-    .sec-header { text-align: center; margin-bottom: 64px; }
-    .sec-eye { font-size: 10px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--green-light); margin-bottom: 14px; }
-    .sec-title { font-family: 'Boogaloo', cursive; font-size: clamp(36px,5.5vw,60px); line-height: 1.0; color: var(--cream); text-shadow: 2px 3px 0 rgba(0,0,0,0.25); }
-    .sec-rule { width: 52px; height: 2px; background: var(--tan); opacity: 0.45; margin: 18px auto; }
-    .sec-body { font-size: 16px; line-height: 1.7; color: rgba(247,241,227,0.7); max-width: 540px; margin: 0 auto; }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
-      .hero-patch-wrap { width: 104px; height: 104px; bottom: -52px; }
-      .hero-text { padding-top: 82px; }
-      .about-inner { grid-template-columns: 1fr; gap: 48px; }
-      .islands { grid-template-columns: 1fr; }
-      .chars-grid { grid-template-columns: 1fr 1fr; }
-      .products { grid-template-columns: 1fr 1fr; }
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 560px) {
-      .hero-patch-wrap { width: 84px; height: 84px; bottom: -42px; }
-      .hero-text { padding-top: 66px; padding-left: 20px; padding-right: 20px; }
-      .hero-btns { flex-direction: column; align-items: center; }
-      .chars-grid { grid-template-columns: 1fr; }
-      .products { grid-template-columns: 1fr; }
+    @media (max-width: 520px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .cards-section { padding: 48px 20px 60px; }
     }
   </style>
 </head>
@@ -443,7 +171,7 @@
 
 <!-- ── NAV ── -->
 <nav>
-  <a class="nav-left" href="#">
+  <a class="nav-left" href="index.html">
     <svg class="nav-patch" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
       <circle cx="45" cy="45" r="43" fill="#152a1c" stroke="#2a7a4a" stroke-width="3.5"/>
       <circle cx="45" cy="45" r="39" fill="none" stroke="#1f5c38" stroke-width="1.2" stroke-dasharray="4 3"/>
@@ -458,250 +186,64 @@
         <ellipse cx="0" cy="0" rx="5.5" ry="8" fill="#2d8a42"/>
         <ellipse cx="-3" cy="3" rx="4.5" ry="6.5" fill="#226630"/>
       </g>
-      <text x="45" y="41" text-anchor="middle" font-family="'Boogaloo', cursive, sans-serif" font-size="15" fill="#c8291a" stroke="#5a1008" stroke-width="0.7" paint-order="stroke">camp</text>
-      <text x="45" y="57" text-anchor="middle" font-family="'Boogaloo', cursive, sans-serif" font-size="15" fill="#c8291a" stroke="#5a1008" stroke-width="0.7" paint-order="stroke">kids</text>
+      <text x="45" y="41" text-anchor="middle" font-family="'Boogaloo',cursive,sans-serif" font-size="15" fill="#c8291a" stroke="#5a1008" stroke-width="0.7" paint-order="stroke">camp</text>
+      <text x="45" y="57" text-anchor="middle" font-family="'Boogaloo',cursive,sans-serif" font-size="15" fill="#c8291a" stroke="#5a1008" stroke-width="0.7" paint-order="stroke">kids</text>
     </svg>
     <span class="nav-wordmark">Camp Kids</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#world">The World</a></li>
-    <li><a href="characters.html">Meet the Camp Kids</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#social">Follow Along</a></li>
-    <li><a href="#shop" class="nav-shop-btn">Shop</a></li>
+    <li><a href="index.html#world">The World</a></li>
+    <li><a href="characters.html" class="active">Meet the Camp Kids</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#shop" class="nav-shop-btn">Shop</a></li>
   </ul>
 </nav>
 
 <!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-night" id="heroNight"></div>
-
-  <div class="hero-img-wrap">
-    <!-- ↓ Real image — drop images/camp-kids-group.jpg into your GitHub images/ folder -->
-    <img class="hero-illustration" src="images/camp-kids-group.jpg" alt="The Camp Kids — all characters together at the dock and on the red canoe"/>
-
-    <div class="hero-patch-wrap">
-      <svg viewBox="0 0 136 136" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-        <circle cx="68" cy="68" r="65" fill="#152a1c" stroke="#2a7a4a" stroke-width="4.5"/>
-        <circle cx="68" cy="68" r="59" fill="none" stroke="#1f5c38" stroke-width="1.8" stroke-dasharray="6 4"/>
-        <circle cx="68" cy="68" r="54" fill="none" stroke="#8b2e18" stroke-width="7"/>
-        <circle cx="68" cy="68" r="47" fill="#6b3d18"/>
-        <circle cx="68" cy="68" r="39" fill="#7d4820" stroke="#5a2e10" stroke-width="0.5"/>
-        <circle cx="68" cy="68" r="31" fill="#9a5828"/>
-        <circle cx="68" cy="68" r="23" fill="#b87035"/>
-        <circle cx="68" cy="68" r="16" fill="#cc8840"/>
-        <circle cx="68" cy="68" r="5"  fill="#6b3d18"/>
-        <g transform="translate(100,26) rotate(25)">
-          <ellipse cx="0" cy="0" rx="8.5" ry="13" fill="#2d8a42"/>
-          <ellipse cx="-5" cy="5" rx="7" ry="10" fill="#226630"/>
-          <ellipse cx="4" cy="6" rx="5" ry="8" fill="#1e5a2a"/>
-        </g>
-        <text x="68" y="62" text-anchor="middle" font-family="'Boogaloo', cursive, sans-serif" font-size="23" fill="#c8291a" stroke="#5a1008" stroke-width="1.1" paint-order="stroke">camp</text>
-        <text x="68" y="86" text-anchor="middle" font-family="'Boogaloo', cursive, sans-serif" font-size="23" fill="#c8291a" stroke="#5a1008" stroke-width="1.1" paint-order="stroke">kids</text>
-      </svg>
-    </div>
-  </div>
-
   <div class="hero-text">
-    <p class="hero-kicker">An Adventure in Learning · Ages 3–9</p>
-    <h1 class="hero-h1">Elevating<br><em>Expectations</em></h1>
-    <p class="hero-script">Where every camper learns to soar</p>
-    <p class="hero-desc">Camp Kids is an extended learning experience built around hand-drawn characters, a treasure map of four islands, and a classroom philosophy that moves young learners from literal to figurative thinking — and leaves them loving the journey.</p>
-    <div class="hero-btns">
-      <a href="characters.html" class="btn btn-red">Meet the Camp Kids</a>
-      <a href="#shop"  class="btn btn-outline">Visit the Store</a>
-    </div>
+    <p class="hero-kicker">Camp Kids &middot; The Characters</p>
+    <h1 class="hero-h1">Meet the <em>Camp Kids</em></h1>
+    <p class="hero-script">Every character. Every adventure. Every lesson.</p>
+    <p class="hero-desc">Each Camp Kid was hand-drawn by educator and artist Debby Moore to bring a specific skill or value to life. Click any character to learn their story.</p>
   </div>
-
-  <svg class="hero-trees" viewBox="0 0 1440 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="height:180px;">
+  <svg class="hero-trees" viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="height:160px;">
     <g fill="#0f2018" opacity="0.95">
-      <polygon points="0,180 30,108 60,180"/><polygon points="44,180 90,62 136,180"/><polygon points="108,180 148,96 188,180"/>
-      <polygon points="168,180 222,48 276,180"/><polygon points="240,180 278,112 316,180"/><polygon points="298,180 358,36 418,180"/>
-      <polygon points="380,180 420,88 460,180"/><polygon points="444,180 494,55 544,180"/><polygon points="516,180 558,104 600,180"/>
-      <polygon points="580,180 646,28 712,180"/><polygon points="668,180 706,94 744,180"/><polygon points="730,180 784,52 838,180"/>
-      <polygon points="806,180 848,80 890,180"/><polygon points="872,180 936,34 1000,180"/><polygon points="958,180 996,100 1034,180"/>
-      <polygon points="1022,180 1076,58 1130,180"/><polygon points="1096,180 1136,86 1176,180"/><polygon points="1158,180 1220,40 1282,180"/>
-      <polygon points="1244,180 1284,112 1324,180"/><polygon points="1306,180 1372,46 1438,180"/><polygon points="1388,180 1414,96 1440,180"/>
+      <polygon points="0,160 30,96 60,160"/><polygon points="44,160 90,54 136,160"/><polygon points="108,160 148,84 188,160"/>
+      <polygon points="168,160 222,40 276,160"/><polygon points="240,160 278,100 316,160"/><polygon points="298,160 358,28 418,160"/>
+      <polygon points="380,160 420,76 460,160"/><polygon points="444,160 494,46 544,160"/><polygon points="516,160 558,92 600,160"/>
+      <polygon points="580,160 646,20 712,160"/><polygon points="668,160 706,82 744,160"/><polygon points="730,160 784,44 838,160"/>
+      <polygon points="806,160 848,68 890,160"/><polygon points="872,160 936,26 1000,160"/><polygon points="958,160 996,88 1034,160"/>
+      <polygon points="1022,160 1076,48 1130,160"/><polygon points="1096,160 1136,74 1176,160"/><polygon points="1158,160 1220,32 1282,160"/>
+      <polygon points="1244,160 1284,100 1324,160"/><polygon points="1306,160 1372,38 1438,160"/><polygon points="1388,160 1414,84 1440,160"/>
     </g>
     <g fill="#162a1e" opacity="0.9">
-      <polygon points="18,180 58,128 98,180"/><polygon points="80,180 130,88 180,180"/><polygon points="162,180 210,118 258,180"/>
-      <polygon points="248,180 308,62 368,180"/><polygon points="348,180 390,122 432,180"/><polygon points="418,180 480,52 542,180"/>
-      <polygon points="528,180 568,108 608,180"/><polygon points="596,180 660,44 724,180"/><polygon points="706,180 748,106 790,180"/>
-      <polygon points="772,180 840,36 908,180"/><polygon points="890,180 930,118 970,180"/><polygon points="952,180 1020,50 1088,180"/>
-      <polygon points="1070,180 1110,106 1150,180"/><polygon points="1132,180 1202,58 1272,180"/><polygon points="1252,180 1292,108 1332,180"/>
-      <polygon points="1314,180 1386,44 1458,180"/>
+      <polygon points="18,160 58,116 98,160"/><polygon points="80,160 130,76 180,160"/><polygon points="162,160 210,106 258,160"/>
+      <polygon points="248,160 308,52 368,160"/><polygon points="348,160 390,110 432,160"/><polygon points="418,160 480,44 542,160"/>
+      <polygon points="528,160 568,96 608,160"/><polygon points="596,160 660,36 724,160"/><polygon points="706,160 748,94 790,160"/>
+      <polygon points="772,160 840,28 908,160"/><polygon points="890,160 930,106 970,160"/><polygon points="952,160 1020,42 1088,160"/>
+      <polygon points="1070,160 1110,94 1150,160"/><polygon points="1132,160 1202,48 1272,160"/><polygon points="1252,160 1292,96 1332,160"/>
+      <polygon points="1314,160 1386,36 1458,160"/>
     </g>
   </svg>
-
 </section>
 
-<!-- ── QUOTE BAND ── -->
-<div class="quote-band">
-  <blockquote>
-    "If you can activate and captivate a child's soul and spirit, that then becomes the glue in which everything meaningful sticks and stays."
-    <cite>— Debby Moore · Educator, Artist &amp; Creator of Camp Kids</cite>
-  </blockquote>
-</div>
-
-<!-- ── THE WORLD ── -->
-<section class="world-section" id="world">
-  <div class="sec-header reveal">
-    <p class="sec-eye">The EQ Treasure Map</p>
-    <h2 class="sec-title" style="color:var(--ink);">Four Islands. <span style="color:var(--red);">One Journey.</span></h2>
-    <div class="sec-rule"></div>
-    <p class="sec-body" style="color:rgba(26,21,16,0.65);">Every Camp Kid sets out across four islands — each one a new frontier of emotional intelligence, guided by characters your kids will never forget.</p>
-  </div>
-
-  <div class="treasure-map-wrap reveal">
-    <img src="images/eq-treasure-map.jpg" alt="The Camp Kids EQ Treasure Map — four islands"/>
-    <div class="map-zones">
-      <div class="map-zone" data-island="0"><div class="map-zone-label">Redfish Island · Self-Awareness</div></div>
-      <div class="map-zone" data-island="1"><div class="map-zone-label">Evergreen Island · Social Awareness</div></div>
-      <div class="map-zone" data-island="2"><div class="map-zone-label">Coral Cove Island · Self-Management</div></div>
-      <div class="map-zone" data-island="3"><div class="map-zone-label">Deep Blue Island · Social Skills</div></div>
-    </div>
-  </div>
-
-  <div class="chars-strip">
-    <div class="sec-header reveal" style="margin-bottom:0;">
-      <p class="sec-eye">Your Guides on the Journey</p>
-      <h2 class="sec-title" style="color:var(--ink);">Meet the <span style="color:var(--red);">Camp Kids</span></h2>
-    </div>
-    <a href="characters.html" class="chars-link-wrap reveal">
-      <div class="chars-link-overlay"></div>
-      <div class="chars-link-grid">
-        <div class="chars-link-card">
-          <div class="chars-link-img"><img src="images/camper-kallen.jpg" alt="Camper Kallen" onerror="this.style.display='none'"></div>
-          <div class="chars-link-body">
-            <div class="chars-link-name">Camper Kallen</div>
-            <div class="chars-link-theme">Enthusiasm for Learning</div>
-            <div class="chars-link-desc">Self-awareness meets magnetic positivity.</div>
-          </div>
-        </div>
-        <div class="chars-link-card">
-          <div class="chars-link-img"><img src="images/clipboard-cole.jpg" alt="Clipboard Cole" onerror="this.style.display='none'"></div>
-          <div class="chars-link-body">
-            <div class="chars-link-name">Clipboard Cole</div>
-            <div class="chars-link-theme">Intentional Learning</div>
-            <div class="chars-link-desc">One intentional act can change everything.</div>
-          </div>
-        </div>
-        <div class="chars-link-card">
-          <div class="chars-link-img"><img src="images/ranger-ross.jpg" alt="Ranger Ross" onerror="this.style.display='none'"></div>
-          <div class="chars-link-body">
-            <div class="chars-link-name">Ranger Ross</div>
-            <div class="chars-link-theme">Verbs, Adverbs &amp; Self-Control</div>
-            <div class="chars-link-desc">Strong actions, mindful choices.</div>
-          </div>
-        </div>
-        <div class="chars-link-card">
-          <div class="chars-link-img"><img src="images/camp-cookie.jpg" alt="Camp Cookie" onerror="this.style.display='none'"></div>
-          <div class="chars-link-body">
-            <div class="chars-link-name">Camp Cookie</div>
-            <div class="chars-link-theme">Emotional Intelligence</div>
-            <div class="chars-link-desc">The heart of camp — feeding every camper good, healthy ideas.</div>
-          </div>
-        </div>
-      </div>
-      <span class="chars-cta">Meet All 12 Camp Kids →</span>
-    </a>
-  </div>
+<!-- ── CHARACTER CARDS ── -->
+<section class="cards-section">
+  <div class="card-grid" id="cardGrid"></div>
 </section>
 
-<!-- ── ABOUT ── -->
-<section class="about-section" id="about">
-  <div class="about-inner">
-    <div class="about-text reveal">
-      <p class="sec-eye" style="text-align:left; color:var(--green-light); margin-bottom:14px;">The Heart Behind Camp Kids</p>
-      <h2 class="sec-title" style="text-align:left; margin-bottom:28px;">Born in a Classroom,<br><span style="color:var(--red);">Built for a Lifetime</span></h2>
-      <div class="sec-rule" style="margin-left:0; margin-bottom:28px;"></div>
-      <p>Camp Kids grew out of a real classroom in <strong>Franklin, Tennessee</strong>, where educator and artist <strong>Debby Moore</strong> transformed her space into a full campsite — complete with characters, a treasure map, and an adventure that made young learners owners of their own learning.</p>
-      <p>What started as a creative teaching environment became something far bigger: a complete framework for social and emotional learning that moves young minds from literal to figurative thinking, from self-focused to community-minded, from reactive to emotionally equipped.</p>
-      <p>Every character Debby drew, every island she named, every workbook she designed carries the same conviction — that <strong>if you can captivate a child's soul, everything meaningful will stick and stay.</strong></p>
-      <a href="#shop" class="btn btn-red" style="margin-top:8px;">Get the Book</a>
-    </div>
-    <div class="creds-panel reveal">
-      <div class="creds-name">Debby Moore</div>
-      <div class="creds-title">Educator · Artist · Creator</div>
-      <div class="creds-divider"></div>
-      <ul class="creds-list">
-        <li><div class="cred-dot"></div>Professional educator with 20+ years in early childhood classrooms</li>
-        <li><div class="cred-dot"></div>Creator and illustrator of all Camp Kids characters — entirely hand-drawn</li>
-        <li><div class="cred-dot"></div>Pioneered the campsite classroom model at Pearre Creek Elementary, Franklin, TN</li>
-        <li><div class="cred-dot"></div>Author of <em>Elevating Expectations</em>, the philosophy behind the Camp Kids world</li>
-        <li><div class="cred-dot"></div>Passionate advocate for EQ in early education, ages 3–9</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ── SHOP ── -->
-<section class="shop-section" id="shop">
-  <div class="sec-header reveal">
-    <p class="sec-eye">The Camp Store</p>
-    <h2 class="sec-title" style="color:var(--ink);">Take the <span style="color:var(--red);">Adventure</span> Home</h2>
-    <div class="sec-rule"></div>
-    <p class="sec-body" style="color:rgba(26,21,16,0.6);">Workbooks, curriculum materials, and Camp Kids gear — everything you need to bring the journey into your classroom or home.</p>
-  </div>
-  <div class="shop-tabs reveal">
-    <button class="stab active" data-tab="edu">Educational Materials</button>
-    <button class="stab" data-tab="gear">Camp Gear &amp; Merch</button>
-  </div>
-  <div class="products">
-    <div class="product-card reveal">
-      <div class="product-img pi-green"><div class="pi-label">Cookie's<br>EQ Workbook</div><div class="pi-badge">Bestseller</div></div>
-      <div class="product-body">
-        <div class="product-name">Cookie's EQ Workbook</div>
-        <p class="product-desc">A journey to social and emotional health. Travels through all four EQ islands with Camp Cookie as your guide — activities, reflection prompts, and characters kids love.</p>
-        <div class="product-row"><span class="product-price">$18</span><a href="#" class="btn-sm">Add to Cart</a></div>
-      </div>
-    </div>
-    <div class="product-card reveal">
-      <div class="product-img pi-bark"><div class="pi-label">Elevating<br>Expectations</div><div class="pi-badge">New</div></div>
-      <div class="product-body">
-        <div class="product-name">Elevating Expectations</div>
-        <p class="product-desc">The educator's guide to the full Camp Kids philosophy — seven chapters covering classroom mindset, thinking, emotional intelligence, student behavior, and more.</p>
-        <div class="product-row"><span class="product-price">$28</span><a href="#" class="btn-sm">Add to Cart</a></div>
-      </div>
-    </div>
-    <div class="product-card reveal">
-      <div class="product-img pi-tan"><div class="pi-label">Camp Kids<br>Bundle</div></div>
-      <div class="product-body">
-        <div class="product-name">Camp Kids Bundle</div>
-        <p class="product-desc">The complete set — workbook, educator guide, and a printable character pack. Everything a classroom or home learner needs to start the adventure together.</p>
-        <div class="product-row"><span class="product-price">$40</span><a href="#" class="btn-sm">Add to Cart</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SOCIAL ── -->
-<section class="social-section" id="social">
-  <div class="reveal">
-    <p class="sec-eye">Stay Connected</p>
-    <h2 class="sec-title">Follow the Journey</h2>
-    <div class="sec-rule"></div>
-    <p class="sec-body">New content, character spotlights, classroom ideas, and behind-the-scenes from the Camp Kids world.</p>
-  </div>
-  <div class="soc-links reveal">
-    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
-    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.19 8.19 0 004.79 1.53V6.79a4.85 4.85 0 01-1.02-.1z"/></svg>TikTok</a>
-    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>YouTube</a>
-    <a href="#" class="soc-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
-  </div>
-</section>
-
-<!-- ── ISLAND MODAL ── -->
-<div class="island-modal-overlay" id="islandModalOverlay">
-  <div class="island-modal">
-    <button class="island-modal-close" id="islandModalClose">&#x2715;</button>
-    <div class="island-modal-top" id="islandModalTop"></div>
-    <div class="island-modal-body">
-      <div class="island-modal-roman" id="islandModalRoman"></div>
-      <div class="island-modal-name" id="islandModalName"></div>
-      <div class="island-modal-theme" id="islandModalTheme"></div>
-      <div class="island-modal-divider"></div>
-      <p class="island-modal-desc" id="islandModalDesc"></p>
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">&#x2715;</button>
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <div class="modal-name" id="modalName"></div>
+      <div class="modal-role" id="modalRole"></div>
+      <div class="modal-theme" id="modalTheme"></div>
+      <div class="modal-divider"></div>
+      <p class="modal-bio" id="modalBio"></p>
     </div>
   </div>
 </div>
@@ -711,84 +253,159 @@
   <div class="footer-mark">Camp Kids</div>
   <div class="footer-tag">Elevating Expectations — Where every camper learns to soar</div>
   <nav class="footer-links">
-    <a href="#world">The World</a>
-    <a href="#about">About</a>
-    <a href="#shop">Shop</a>
-    <a href="#social">Follow Along</a>
-    <a href="#">Contact</a>
+    <a href="index.html#world">The World</a>
+    <a href="characters.html">The Characters</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#social">Follow Along</a>
   </nav>
   <div class="footer-copy">© 2026 Camp Kids · Created by Debby Moore · thecampkids.com</div>
 </footer>
 
 <script>
-  // ── NIGHT SKY ──
-  const night = document.getElementById('heroNight');
-  // Stars
-  for (let i = 0; i < 120; i++) {
-    const s = document.createElement('div');
-    s.className = 'star';
-    const sz = Math.random() * 2.5 + 0.5;
-    s.style.cssText = `
-      width:${sz}px; height:${sz}px;
-      left:${Math.random()*100}%; top:${Math.random()*85}%;
-      --dur:${(Math.random()*3+2).toFixed(1)}s;
-      --delay:-${(Math.random()*4).toFixed(1)}s;
-      --min-op:${(Math.random()*0.1+0.05).toFixed(2)};
-      --max-op:${(Math.random()*0.5+0.5).toFixed(2)};
-    `;
-    night.appendChild(s);
-  }
-  // Fireflies
-  for (let i = 0; i < 18; i++) {
-    const f = document.createElement('div');
-    f.className = 'firefly';
-    const dx = (Math.random()*60-30).toFixed(0);
-    const dy = (Math.random()*80+40).toFixed(0);
-    f.style.cssText = `
-      left:${Math.random()*95}%; top:${Math.random()*70+20}%;
-      --fdur:${(Math.random()*5+5).toFixed(1)}s;
-      --fdelay:-${(Math.random()*6).toFixed(1)}s;
-      --fx:${dx}px; --fy:-${dy}px;
-    `;
-    night.appendChild(f);
-  }
-
-  // ── ISLAND MAP ──
-  const islandData = [
-    { roman:'I',   name:'Redfish Island',    theme:'Self-Awareness',   color:'#b8291a', desc:'Campers begin by discovering who they truly are — their strengths, their feelings, and the unique gifts they bring to the world. Every great journey starts here.' },
-    { roman:'II',  name:'Evergreen Island',  theme:'Social Awareness', color:'#2a6640', desc:"Through empathy and community, campers learn to see the world through others' eyes — understanding how their choices ripple out to the people around them." },
-    { roman:'III', name:'Coral Cove Island', theme:'Self-Management',  color:'#2a6080', desc:'Canoe Kathy and Ranger Ross guide campers through decision-making, emotional regulation, and the power of thinking before acting. Mindful choices lead to big wins.' },
-    { roman:'IV',  name:'Deep Blue Island',  theme:'Social Skills',    color:'#9e5528', desc:'The final destination — collaboration, negotiation, and the truth every Camp Kid discovers: TOGETHER is always better than alone.' }
+  const characters = [
+    {
+      slug: "camper-kallen",
+      name: "Camper Kallen",
+      role: "Camp Counselor",
+      theme: "Enthusiasm for Learning",
+      desc: "Self-awareness meets magnetic positivity.",
+      bio: "Hi, my name is Camper Kallen and I am happy to meet you. I understand how important it is to have a positive attitude. I think if you know who you are and what you can share with others, that is the key to happiness! Enjoy your EQ hike and choose to be positive and choose to be great!"
+    },
+    {
+      slug: "ranger-ross",
+      name: "Ranger Ross",
+      role: "Activities Director",
+      theme: "Verbs, Adverbs & Self-Control",
+      desc: "Strong actions, mindful choices.",
+      bio: "Greetings Campers, my name is Ranger Ross. I have made it my mission to be STRONG with my actions and emotions. I think it is a good strategy to listen carefully, explore my choices, and think before I act. I like to visit Coral Cove Island to learn how to be mindful in my decisions. Join me and be strong!"
+    },
+    {
+      slug: "buddy-bear",
+      name: "Buddy Bear",
+      role: "Camp Friend",
+      theme: "Friendship & Teamwork",
+      desc: "Stronger linked together.",
+      bio: "Calling all buddies! Buddy Bear here with my 'ole pal Bubby Bear. We have a saying we like about friendship — Big and small, short and tall, each one a friend to call! This means that we don't have to be alike to be good friends, so let's all be nice and be buddies!"
+    },
+    {
+      slug: "canoe-kathy",
+      name: "Canoe Kathy",
+      role: "Waterfront Staff",
+      theme: "Diversity & Great Choices",
+      desc: "Celebrating differences, making great choices.",
+      bio: "Hello friends, my name is Canoe Kathy! I'm excited to join this journey with you. When I travel to Coral Cove Island, I learn and understand how important it is to make good choices for myself. I like to brainstorm different ideas to manage my choices then choose the best. Let's all paddle on!"
+    },
+    {
+      slug: "daring-dana",
+      name: "Daring Dana",
+      role: "Camp Pilot",
+      theme: "Perspective",
+      desc: "The sky's the limit when you dare to see further.",
+      bio: "Well kids, things sure look different when you're flying through the clouds looking down at the EQ islands. What I see from my plane is very different from what the other Camp Kids see on the ground. Perspective means what you see or feel from where you are at the moment. I try to think about my feelings and how they can help me go to new altitudes. Remember — the sky is the limit!"
+    },
+    {
+      slug: "diver-dave",
+      name: "Diver Dave",
+      role: "Waterfront Staff",
+      theme: "Depths of Knowledge",
+      desc: "The deeper you think, the greater the treasure.",
+      bio: "Diver Dave here coming up for air! How is everyone? I love to dive deeper in my thinking and I practice thinking about situations to make everything better. My deeper thinking allows me to be mindful of the importance of having self-control. Let's all dive in and go deeper!"
+    },
+    {
+      slug: "clipboard-cole",
+      name: "Clipboard Cole",
+      role: "Camp Director",
+      theme: "Intentional Learning & Retention",
+      desc: "One intentional act can change everything.",
+      bio: "Ring the camp bell friends and gather around. My name is Clipboard Cole, and I decided that I wanted to be an intentional learner and friend. Intentional means you make it happen because you care. The Camp Kids asked me to be their leader because I care about everything I do. I invite you to have an intentional spirit and be a game-changer for others!"
+    },
+    {
+      slug: "camp-cookie",
+      name: "Camp Cookie",
+      role: "Camp Cook",
+      theme: "Emotional Intelligence",
+      desc: "The heart of the camp — feeding every camper good, healthy ideas.",
+      bio: "Welcome friends! My name is Camp Cookie. The Camp Kids gave me that name because I am the camp cook. I want to share something special with you — something very important, something that will help you discover real happiness! It's my secret recipe for EQ cake. EQ means Emotional Quotient, which is just another name for emotional intelligence. EQ is how smart you are with your feelings. When you finish my journal you will be EQ STRONG!"
+    },
+    {
+      slug: "jig-jen",
+      name: "Jig Jen",
+      role: "Fishing Staff",
+      theme: "Adjectives & Alluring Writing",
+      desc: "Colorful, alluring adjectives make writing soar.",
+      bio: "Hey everyone, I'm Jig Jen and I decided that I am aware to care, I dare to care, and I prepare to care. It is so important to decide to care about who you are and who you want to be — and then make a plan to make it happen. So friends, let's cast it forward!"
+    },
+    {
+      slug: "angler-alex",
+      name: "Angler Alex",
+      role: "Fishing Staff",
+      theme: "Retention & Mastery",
+      desc: "Catch it, keep it, never let it go.",
+      bio: "Hi Kids! Just throwing my line out there to catch a name. It makes others happy if you think they are important enough to remember their name or something else they told you — so let's be 'angling' to be good listeners!"
+    },
+    {
+      slug: "nurse-nellie",
+      name: "Nurse Nellie",
+      role: "Camp Nurse",
+      theme: "Health & Wellness",
+      desc: "A daily dose of kindness and good health.",
+      bio: "Hello Campers, I am Nurse Nellie the camp nurse. My job is giving a dose of good health practices to the Camp Kids. They need energy to be game changers for others. My prescription for strong living includes eating healthy foods, exercising, and hydrating as needed. Always apply good health practices such as washing your hands often, and remember to cover coughs and sneezes. In addition, be sure to get plenty of rest to feel your best, and dispense kindness daily."
+    },
+    {
+      slug: "scout-scooter",
+      name: "Scout & Scooter",
+      role: "Camp Dogs",
+      theme: "Loyalty & Belonging",
+      desc: "With the Camp Kids, you are never alone.",
+      bio: "You two have brought so much joy to everyone at camp. With the Camp Kids you will never be afraid, hungry or alone again! You are a treasure in their hearts and loved deeply!"
+    }
   ];
-  const islandOverlay = document.getElementById('islandModalOverlay');
-  document.querySelectorAll('.map-zone').forEach(zone => {
-    zone.addEventListener('click', () => {
-      const d = islandData[+zone.dataset.island];
-      document.getElementById('islandModalTop').style.background = d.color;
-      document.getElementById('islandModalRoman').textContent = d.roman;
-      document.getElementById('islandModalName').textContent = d.name;
-      const th = document.getElementById('islandModalTheme');
-      th.textContent = d.theme; th.style.color = d.color;
-      document.getElementById('islandModalDesc').textContent = d.desc;
-      islandOverlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  document.getElementById('islandModalClose').addEventListener('click', () => { islandOverlay.classList.remove('open'); document.body.style.overflow = ''; });
-  islandOverlay.addEventListener('click', e => { if (e.target === islandOverlay) { islandOverlay.classList.remove('open'); document.body.style.overflow = ''; } });
 
-  // ── SCROLL REVEAL + TABS ──
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const grid = document.getElementById('cardGrid');
+  const overlay = document.getElementById('modalOverlay');
+  const modalImg = document.getElementById('modalImg');
+  const modalName = document.getElementById('modalName');
+  const modalRole = document.getElementById('modalRole');
+  const modalTheme = document.getElementById('modalTheme');
+  const modalBio = document.getElementById('modalBio');
 
-  document.querySelectorAll('.stab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
+  characters.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'char-card';
+    card.innerHTML = `
+      <div class="char-img">
+        <img src="images/${c.slug}.jpg" alt="${c.name}" onerror="this.style.display='none'">
+        <div class="char-img-placeholder">${c.name.charAt(0)}</div>
+      </div>
+      <div class="char-body">
+        <div class="char-name">${c.name}</div>
+        <div class="char-theme">${c.theme}</div>
+        <div class="char-desc">${c.desc}</div>
+      </div>`;
+    card.addEventListener('click', () => openModal(c));
+    grid.appendChild(card);
   });
+
+  function openModal(c) {
+    modalImg.innerHTML = `<img src="images/${c.slug}.jpg" alt="${c.name}" onerror="this.style.display='none'">`;
+    modalImg.style.backgroundColor = 'var(--parchment-dk)';
+    modalName.textContent = c.name;
+    modalRole.textContent = c.role;
+    modalTheme.textContent = c.theme;
+    modalBio.textContent = c.bio;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 </body>
 </html>
