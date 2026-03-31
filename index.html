@@ -45,6 +45,30 @@
     .nav-shop-btn { background: var(--red) !important; color: var(--cream) !important; padding: 8px 22px; border-radius: 2px; }
     .nav-shop-btn:hover { background: var(--red-warm) !important; }
 
+    /* ── NIGHT SKY ── */
+    .hero-night { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .star {
+      position: absolute; border-radius: 50%; background: #fff;
+      animation: twinkle var(--dur, 3s) var(--delay, 0s) infinite ease-in-out;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: var(--min-op, 0.15); transform: scale(1); }
+      50%       { opacity: var(--max-op, 0.85); transform: scale(1.4); }
+    }
+    .firefly {
+      position: absolute; border-radius: 50%; width: 4px; height: 4px;
+      background: rgba(190, 255, 110, 0.95);
+      box-shadow: 0 0 7px 3px rgba(160, 255, 80, 0.55);
+      animation: ffloat var(--fdur, 7s) var(--fdelay, 0s) infinite ease-in-out;
+    }
+    @keyframes ffloat {
+      0%   { transform: translate(0,0) scale(1); opacity: 0; }
+      15%  { opacity: 1; }
+      50%  { transform: translate(var(--fx,18px), calc(var(--fy,-70px) * .5)) scale(1.3); }
+      85%  { opacity: 0.5; }
+      100% { transform: translate(var(--fx,18px), var(--fy,-70px)) scale(0.7); opacity: 0; }
+    }
+
     /* ── HERO ── */
     .hero {
       background: var(--green-deep);
@@ -370,6 +394,7 @@
 
 <!-- ── HERO ── -->
 <section class="hero">
+  <div class="hero-night" id="heroNight"></div>
 
   <div class="hero-img-wrap">
     <!-- ↓ Real image — drop images/camp-kids-group.jpg into your GitHub images/ folder -->
@@ -614,6 +639,38 @@
 </footer>
 
 <script>
+  // ── NIGHT SKY ──
+  const night = document.getElementById('heroNight');
+  // Stars
+  for (let i = 0; i < 120; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const sz = Math.random() * 2.5 + 0.5;
+    s.style.cssText = `
+      width:${sz}px; height:${sz}px;
+      left:${Math.random()*100}%; top:${Math.random()*85}%;
+      --dur:${(Math.random()*3+2).toFixed(1)}s;
+      --delay:-${(Math.random()*4).toFixed(1)}s;
+      --min-op:${(Math.random()*0.1+0.05).toFixed(2)};
+      --max-op:${(Math.random()*0.5+0.5).toFixed(2)};
+    `;
+    night.appendChild(s);
+  }
+  // Fireflies
+  for (let i = 0; i < 18; i++) {
+    const f = document.createElement('div');
+    f.className = 'firefly';
+    const dx = (Math.random()*60-30).toFixed(0);
+    const dy = (Math.random()*80+40).toFixed(0);
+    f.style.cssText = `
+      left:${Math.random()*95}%; top:${Math.random()*70+20}%;
+      --fdur:${(Math.random()*5+5).toFixed(1)}s;
+      --fdelay:-${(Math.random()*6).toFixed(1)}s;
+      --fx:${dx}px; --fy:-${dy}px;
+    `;
+    night.appendChild(f);
+  }
+
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
