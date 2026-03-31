@@ -283,6 +283,38 @@
     .char-role { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 10px; }
     .char-quote { font-family: 'Lora', serif; font-style: italic; font-size: 12.5px; line-height: 1.55; color: rgba(26,21,16,0.6); }
 
+    /* ── CHARS STRIP LINK ── */
+    .chars-link-wrap {
+      display: block; text-decoration: none; margin-top: 40px; position: relative;
+    }
+    .chars-link-overlay {
+      position: absolute; inset: -10px; border-radius: 4px;
+      border: 2px dashed rgba(184,41,26,0.0); transition: border-color 0.2s;
+      pointer-events: none;
+    }
+    .chars-link-wrap:hover .chars-link-overlay { border-color: rgba(184,41,26,0.25); }
+    .chars-link-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .chars-link-card {
+      background: var(--cream); border: 1px solid var(--parchment-dk); border-radius: 2px;
+      overflow: hidden; transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .chars-link-wrap:hover .chars-link-card { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(26,21,16,0.13); }
+    .chars-link-img {
+      width: 100%; height: 190px; background: var(--parchment-dk);
+      overflow: hidden;
+    }
+    .chars-link-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .chars-link-body { padding: 16px 16px 18px; }
+    .chars-link-name { font-family: 'Boogaloo', cursive; font-size: 20px; color: var(--ink); margin-bottom: 3px; }
+    .chars-link-theme { font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+    .chars-link-desc { font-family: 'Lora', serif; font-style: italic; font-size: 12.5px; line-height: 1.55; color: rgba(26,21,16,0.6); }
+    .chars-cta {
+      display: block; text-align: center; margin-top: 30px;
+      font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--red);
+    }
+    .chars-link-wrap:hover .chars-cta { text-decoration: underline; }
+
     /* ── ABOUT SECTION ── */
     .about-section { background: var(--green-deep); padding: 100px 40px; position: relative; }
     .about-section::before {
@@ -535,40 +567,44 @@
       <p class="sec-eye">Your Guides on the Journey</p>
       <h2 class="sec-title" style="color:var(--ink);">Meet the <span style="color:var(--red);">Camp Kids</span></h2>
     </div>
-    <div class="chars-grid">
-      <div class="char-card reveal">
-        <div class="char-circle" style="background:#f0e8d0; border-color:#d4c198;">
-          <svg width="36" height="36" viewBox="0 0 36 36"><ellipse cx="18" cy="22" rx="12" ry="7" fill="#e8e0c8"/><ellipse cx="18" cy="13" rx="8" ry="7" fill="#f0ece0"/><rect x="8" y="18" width="20" height="6" fill="#e8e0c8" rx="1"/><ellipse cx="18" cy="22" rx="3" ry="2" fill="#b82918" opacity="0.6"/></svg>
+    <a href="characters.html" class="chars-link-wrap reveal">
+      <div class="chars-link-overlay"></div>
+      <div class="chars-link-grid">
+        <div class="chars-link-card">
+          <div class="chars-link-img"><img src="images/camper-kallen.jpg" alt="Camper Kallen" onerror="this.style.display='none'"></div>
+          <div class="chars-link-body">
+            <div class="chars-link-name">Camper Kallen</div>
+            <div class="chars-link-theme">Enthusiasm for Learning</div>
+            <div class="chars-link-desc">Self-awareness meets magnetic positivity.</div>
+          </div>
         </div>
-        <div class="char-name">Camp Cookie</div>
-        <div class="char-role">The Nurturer</div>
-        <p class="char-quote">"My recipe includes self-awareness, empathy, love, and kindness — baked for a lifetime. Serves: everyone!"</p>
-      </div>
-      <div class="char-card reveal">
-        <div class="char-circle" style="background:#d8eee0; border-color:#b0d4bc;">
-          <svg width="36" height="36" viewBox="0 0 36 36"><ellipse cx="18" cy="8" rx="5" ry="6" fill="#c8a87a"/><rect x="17" y="13" width="2" height="14" fill="#9a6830"/><ellipse cx="18" cy="28" rx="5" ry="5" fill="#c8a87a"/></svg>
+        <div class="chars-link-card">
+          <div class="chars-link-img"><img src="images/clipboard-cole.jpg" alt="Clipboard Cole" onerror="this.style.display='none'"></div>
+          <div class="chars-link-body">
+            <div class="chars-link-name">Clipboard Cole</div>
+            <div class="chars-link-theme">Intentional Learning</div>
+            <div class="chars-link-desc">One intentional act can change everything.</div>
+          </div>
         </div>
-        <div class="char-name">Canoe Kathy</div>
-        <div class="char-role">Self-Management</div>
-        <p class="char-quote">"I brainstorm different ideas to manage my choices, then choose the best. Let's all paddle on!"</p>
-      </div>
-      <div class="char-card reveal">
-        <div class="char-circle" style="background:#e8ded0; border-color:#c8a87a;">
-          <svg width="36" height="36" viewBox="0 0 36 36"><rect x="13" y="12" width="10" height="14" rx="2" fill="#e8a830" stroke="#a87020" stroke-width="1"/><rect x="16" y="8" width="4" height="5" rx="1" fill="#9a6830"/><ellipse cx="18" cy="18" rx="4" ry="5" fill="#fcd060" opacity="0.7"/></svg>
+        <div class="chars-link-card">
+          <div class="chars-link-img"><img src="images/ranger-ross.jpg" alt="Ranger Ross" onerror="this.style.display='none'"></div>
+          <div class="chars-link-body">
+            <div class="chars-link-name">Ranger Ross</div>
+            <div class="chars-link-theme">Verbs, Adverbs &amp; Self-Control</div>
+            <div class="chars-link-desc">Strong actions, mindful choices.</div>
+          </div>
         </div>
-        <div class="char-name">Ranger Ross</div>
-        <div class="char-role">Strength &amp; Mindfulness</div>
-        <p class="char-quote">"Listen carefully, explore your choices, and think before you act. Join me and be strong!"</p>
-      </div>
-      <div class="char-card reveal">
-        <div class="char-circle" style="background:#dce8f0; border-color:#a8c4d8;">
-          <svg width="36" height="36" viewBox="0 0 36 36"><circle cx="13" cy="18" r="7" fill="none" stroke="#2a6080" stroke-width="3"/><circle cx="23" cy="18" r="7" fill="none" stroke="#2a6080" stroke-width="3"/><rect x="13" y="14" width="10" height="8" fill="white"/></svg>
+        <div class="chars-link-card">
+          <div class="chars-link-img"><img src="images/camp-cookie.jpg" alt="Camp Cookie" onerror="this.style.display='none'"></div>
+          <div class="chars-link-body">
+            <div class="chars-link-name">Camp Cookie</div>
+            <div class="chars-link-theme">Emotional Intelligence</div>
+            <div class="chars-link-desc">The heart of camp — feeding every camper good, healthy ideas.</div>
+          </div>
         </div>
-        <div class="char-name">Camp Kids Group</div>
-        <div class="char-role">Teamwork</div>
-        <p class="char-quote">"We become stronger like a chain linked together. TOGETHER is better!"</p>
       </div>
-    </div>
+      <span class="chars-cta">Meet All 12 Camp Kids →</span>
+    </a>
   </div>
 </section>
 
