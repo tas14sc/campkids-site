@@ -218,6 +218,54 @@
     .isl-tan   .island-theme { color: var(--bark-mid); }
     .island-desc { font-size: 14px; line-height: 1.65; color: rgba(26,21,16,0.65); }
 
+    /* ── TREASURE MAP ── */
+    .treasure-map-wrap {
+      max-width: 1020px; margin: 0 auto; position: relative;
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 12px 48px rgba(26,21,16,0.22);
+    }
+    .treasure-map-wrap img { width: 100%; height: auto; display: block; }
+    .map-zones {
+      position: absolute; inset: 0;
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+    }
+    .map-zone { cursor: pointer; position: relative; transition: background 0.2s; }
+    .map-zone:hover { background: rgba(184,41,26,0.08); outline: 3px solid rgba(184,41,26,0.35); outline-offset: -3px; }
+    .map-zone-label {
+      position: absolute; bottom: 12px; left: 8px; right: 8px;
+      background: rgba(26,21,16,0.75); backdrop-filter: blur(4px);
+      color: var(--cream); font-family: 'Lora', serif; font-style: italic;
+      font-size: 13px; padding: 7px 10px; border-radius: 2px; text-align: center;
+      opacity: 0; transition: opacity 0.2s; pointer-events: none;
+    }
+    .map-zone:hover .map-zone-label { opacity: 1; }
+
+    /* ── ISLAND MODAL ── */
+    .island-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(20,35,22,0.82); backdrop-filter: blur(6px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .island-modal-overlay.open { display: flex; }
+    .island-modal {
+      background: var(--cream); border-radius: 2px; max-width: 520px; width: 100%;
+      position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.5); overflow: hidden;
+    }
+    .island-modal-top { height: 8px; }
+    .island-modal-body { padding: 36px 36px 40px; }
+    .island-modal-roman { font-family: 'Lora', serif; font-size: 72px; font-weight: 600; color: rgba(26,21,16,0.07); line-height: 1; margin-bottom: -16px; }
+    .island-modal-name { font-family: 'Lora', serif; font-style: italic; font-size: 32px; color: var(--ink); margin-bottom: 6px; }
+    .island-modal-theme { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; }
+    .island-modal-divider { width: 40px; height: 2px; background: var(--tan); margin-bottom: 20px; }
+    .island-modal-desc { font-size: 15px; line-height: 1.8; color: rgba(26,21,16,0.72); }
+    .island-modal-close {
+      position: absolute; top: 14px; right: 14px; width: 34px; height: 34px;
+      border-radius: 50%; background: rgba(26,21,16,0.1); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--ink); transition: background 0.15s;
+    }
+    .island-modal-close:hover { background: rgba(26,21,16,0.2); }
+
     .chars-strip { max-width: 1060px; margin: 80px auto 0; }
     .chars-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 40px; }
     .char-card {
@@ -472,30 +520,13 @@
     <p class="sec-body" style="color:rgba(26,21,16,0.65);">Every Camp Kid sets out across four islands — each one a new frontier of emotional intelligence, guided by characters your kids will never forget.</p>
   </div>
 
-  <div class="islands">
-    <div class="island-card isl-red reveal">
-      <div class="island-roman">I</div>
-      <div class="island-name">Redfish Island</div>
-      <div class="island-theme">Self-Awareness</div>
-      <p class="island-desc">Campers begin by discovering who they truly are — their strengths, their feelings, and the unique gifts they bring to the world. Every great journey starts here.</p>
-    </div>
-    <div class="island-card isl-green reveal">
-      <div class="island-roman">II</div>
-      <div class="island-name">Evergreen Island</div>
-      <div class="island-theme">Social Awareness</div>
-      <p class="island-desc">Through empathy and community, campers learn to see the world through others' eyes — understanding how their choices ripple out to the people around them.</p>
-    </div>
-    <div class="island-card isl-blue reveal">
-      <div class="island-roman">III</div>
-      <div class="island-name">Coral Cove Island</div>
-      <div class="island-theme">Self-Management</div>
-      <p class="island-desc">Canoe Kathy and Ranger Ross guide campers through decision-making, emotional regulation, and the power of thinking before acting. Mindful choices lead to big wins.</p>
-    </div>
-    <div class="island-card isl-tan reveal">
-      <div class="island-roman">IV</div>
-      <div class="island-name">Deep Blue Island</div>
-      <div class="island-theme">Social Skills</div>
-      <p class="island-desc">The final destination — collaboration, negotiation, and the truth every Camp Kid discovers: TOGETHER is always better than alone.</p>
+  <div class="treasure-map-wrap reveal">
+    <img src="images/eq-treasure-map.jpg" alt="The Camp Kids EQ Treasure Map — four islands"/>
+    <div class="map-zones">
+      <div class="map-zone" data-island="0"><div class="map-zone-label">Redfish Island · Self-Awareness</div></div>
+      <div class="map-zone" data-island="1"><div class="map-zone-label">Evergreen Island · Social Awareness</div></div>
+      <div class="map-zone" data-island="2"><div class="map-zone-label">Coral Cove Island · Self-Management</div></div>
+      <div class="map-zone" data-island="3"><div class="map-zone-label">Deep Blue Island · Social Skills</div></div>
     </div>
   </div>
 
@@ -624,6 +655,21 @@
   </div>
 </section>
 
+<!-- ── ISLAND MODAL ── -->
+<div class="island-modal-overlay" id="islandModalOverlay">
+  <div class="island-modal">
+    <button class="island-modal-close" id="islandModalClose">&#x2715;</button>
+    <div class="island-modal-top" id="islandModalTop"></div>
+    <div class="island-modal-body">
+      <div class="island-modal-roman" id="islandModalRoman"></div>
+      <div class="island-modal-name" id="islandModalName"></div>
+      <div class="island-modal-theme" id="islandModalTheme"></div>
+      <div class="island-modal-divider"></div>
+      <p class="island-modal-desc" id="islandModalDesc"></p>
+    </div>
+  </div>
+</div>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-mark">Camp Kids</div>
@@ -671,6 +717,31 @@
     night.appendChild(f);
   }
 
+  // ── ISLAND MAP ──
+  const islandData = [
+    { roman:'I',   name:'Redfish Island',    theme:'Self-Awareness',   color:'#b8291a', desc:'Campers begin by discovering who they truly are — their strengths, their feelings, and the unique gifts they bring to the world. Every great journey starts here.' },
+    { roman:'II',  name:'Evergreen Island',  theme:'Social Awareness', color:'#2a6640', desc:"Through empathy and community, campers learn to see the world through others' eyes — understanding how their choices ripple out to the people around them." },
+    { roman:'III', name:'Coral Cove Island', theme:'Self-Management',  color:'#2a6080', desc:'Canoe Kathy and Ranger Ross guide campers through decision-making, emotional regulation, and the power of thinking before acting. Mindful choices lead to big wins.' },
+    { roman:'IV',  name:'Deep Blue Island',  theme:'Social Skills',    color:'#9e5528', desc:'The final destination — collaboration, negotiation, and the truth every Camp Kid discovers: TOGETHER is always better than alone.' }
+  ];
+  const islandOverlay = document.getElementById('islandModalOverlay');
+  document.querySelectorAll('.map-zone').forEach(zone => {
+    zone.addEventListener('click', () => {
+      const d = islandData[+zone.dataset.island];
+      document.getElementById('islandModalTop').style.background = d.color;
+      document.getElementById('islandModalRoman').textContent = d.roman;
+      document.getElementById('islandModalName').textContent = d.name;
+      const th = document.getElementById('islandModalTheme');
+      th.textContent = d.theme; th.style.color = d.color;
+      document.getElementById('islandModalDesc').textContent = d.desc;
+      islandOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  document.getElementById('islandModalClose').addEventListener('click', () => { islandOverlay.classList.remove('open'); document.body.style.overflow = ''; });
+  islandOverlay.addEventListener('click', e => { if (e.target === islandOverlay) { islandOverlay.classList.remove('open'); document.body.style.overflow = ''; } });
+
+  // ── SCROLL REVEAL + TABS ──
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
