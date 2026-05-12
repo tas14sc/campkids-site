@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Camp Kids — Where summer camp meets emotional intelligence</title>
-  <meta name="description" content="The Camp Kids is a summer camp and curriculum that teaches kids real tools for navigating friendships, emotions, and challenges. Led by former educator Debby Moore.">
+  <title>The Camp Kids — Elevating Expectations</title>
+  <meta name="description" content="The Camp Kids — a summer camp and EQ curriculum led by educator Debby Moore. Where every camper learns to soar.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
 </head>
@@ -19,12 +19,12 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="index.html">
-        <img src="misc/camp-kids-badge.svg" alt="The Camp Kids badge">
-        <span class="brand-text">The Camp Kids</span>
+        <img src="misc/camp-kids-badge.svg" alt="Camp Kids patch">
+        <span class="brand-text">Camp Kids</span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="links">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="characters.html">Characters</a>
         <a href="concepts.html">Concepts</a>
         <a href="camps.html">Camps</a>
@@ -34,55 +34,78 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <img class="hero-badge" src="misc/camp-kids-badge.svg" alt="The Camp Kids patch">
-      <h1>The Camp Kids</h1>
-      <p class="hero-sub">A summer camp, a curriculum, and a whole crew of friends — helping kids learn the language of their feelings.</p>
-      <div class="hero-cta">
-        <a class="btn" href="camps.html">Sign Up for Camp</a>
-        <a class="btn ghost" href="characters.html">Meet the Crew</a>
+  <main>
+    <section class="container hero">
+      <span class="kicker hero-kicker">The Camp Kids · Summer 2026</span>
+      <h1>
+        <span class="line1">Elevating Expectations</span>
+        <span class="line2">with THE CAMP KIDS</span>
+      </h1>
+      <p class="hero-sub">Where every camper learns to soar.</p>
+
+      <div class="hero-scene">
+        <img src="misc/camp-kids-group.svg" alt="The whole Camp Kids crew at the lakeside camp">
+        <a href="camps.html" class="signup-sticker" aria-label="Sign up for Summer Camp">
+          <span class="top">Sign up for</span>
+          <span class="main">Summer Camp!</span>
+          <span class="cta">Tap to Reserve →</span>
+        </a>
       </div>
     </section>
 
-    <section class="hero-scene">
-      <img src="misc/camp-kids-group.svg" alt="The whole Camp Kids crew gathered at the lakeside">
+    <section class="container">
+      <div class="quote-band">
+        <div class="quote-mark">"</div>
+        <blockquote>
+          If you can activate and captivate a child's soul and spirit, that then becomes the glue in which everything meaningful sticks and stays.
+        </blockquote>
+        <div class="accent-bar"></div>
+        <cite>Debby Moore · Creator of The Camp Kids</cite>
+      </div>
     </section>
 
-    <section class="home-cards">
-      <a class="card" href="characters.html" style="text-decoration: none; color: inherit; display: block;">
-        <h3>Meet the Characters</h3>
-        <p>Twelve friends — from Ranger Ross to Nurse Nellie — each with a story and a lesson to share.</p>
-        <span class="arrow">Explore the crew →</span>
-      </a>
+    <section class="container">
+      <div class="sec-header">
+        <span class="kicker">Explore</span>
+        <h2>Find Your Way Around</h2>
+        <div class="sec-rule"></div>
+        <p class="sec-desc">Meet the crew, discover the concepts, sign up for camp — it's all one map away.</p>
+      </div>
 
-      <a class="card" href="concepts.html" style="text-decoration: none; color: inherit; display: block;">
-        <h3>The Concepts</h3>
-        <p>Five core ideas that form the heart of the Camp Kids way — tools kids can carry for life.</p>
-        <span class="arrow">See the concepts →</span>
-      </a>
+      <div class="home-cards">
+        <a class="home-card" href="characters.html">
+          <h3>Meet the Camp Kids</h3>
+          <p>Twelve hand-drawn friends, each with a story and a lesson — from Ranger Ross to Nurse Nellie.</p>
+          <span class="arrow">Explore the crew →</span>
+        </a>
 
-      <a class="card" href="camps.html" style="text-decoration: none; color: inherit; display: block;">
-        <h3>Summer Camp 2026</h3>
-        <p>One week of storytelling, activities, and real EQ tools with Mrs. Moore in Westhaven.</p>
-        <span class="arrow">Reserve a spot →</span>
-      </a>
+        <a class="home-card" href="concepts.html">
+          <h3>The Concepts</h3>
+          <p>Five core ideas that form the heart of the Camp Kids way — tools kids can carry for life.</p>
+          <span class="arrow">See the concepts →</span>
+        </a>
+
+        <a class="home-card" href="camps.html">
+          <h3>Summer Camp 2026</h3>
+          <p>One week of storytelling, activities, and real EQ tools with Mrs. Moore in Westhaven.</p>
+          <span class="arrow">Reserve a spot →</span>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <a class="brand" href="index.html">
-        <img src="misc/camp-kids-badge.svg" alt="">
-        <span class="brand-text">The Camp Kids</span>
-      </a>
-      <div class="footer-links">
-        <a href="camps.html">Sign Up</a>
-        <a href="mailto:info@thecampkids.com">info@thecampkids.com</a>
-        <a href="https://instagram.com/thecampkids" target="_blank" rel="noopener">@thecampkids</a>
-      </div>
-      <div>© <span id="year"></span> The Camp Kids</div>
-    </div>
+    <div class="footer-mark">Camp Kids</div>
+    <div class="footer-tag">Elevating Expectations — EQ drives IQ</div>
+    <nav class="footer-links">
+      <a href="characters.html">Characters</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="camps.html">Summer Camps</a>
+      <a href="store.html">Store</a>
+      <a href="socials.html">Follow Along</a>
+      <a href="mailto:info@thecampkids.com">Contact</a>
+    </nav>
+    <div class="footer-copy">© <span id="year"></span> The Camp Kids · Created by Debby Moore · thecampkids.com</div>
   </footer>
 
   <script src="scripts.js"></script>

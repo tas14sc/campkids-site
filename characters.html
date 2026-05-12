@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meet The Camp Kids — The Crew</title>
-  <meta name="description" content="Meet the twelve Camp Kids characters — friends who guide kids through emotional intelligence, friendship, and growing up.">
+  <title>Meet the Camp Kids — The Characters</title>
+  <meta name="description" content="Meet the twelve hand-drawn Camp Kids characters — each one created by educator Debby Moore to bring a specific skill or value to life.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
 </head>
@@ -19,13 +19,13 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="index.html">
-        <img src="misc/camp-kids-badge.svg" alt="The Camp Kids badge">
-        <span class="brand-text">The Camp Kids</span>
+        <img src="misc/camp-kids-badge.svg" alt="Camp Kids patch">
+        <span class="brand-text">Camp Kids</span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="links">
         <a href="index.html">Home</a>
-        <a href="characters.html">Characters</a>
+        <a href="characters.html" class="active">Characters</a>
         <a href="concepts.html">Concepts</a>
         <a href="camps.html">Camps</a>
         <a href="store.html">Store</a>
@@ -34,101 +34,93 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="page-intro">
-      <span class="tagline">The Crew</span>
-      <h1>Meet The Camp Kids</h1>
-      <p>A whole crew of friends, each with their own gift — ready to guide kids through the lessons of growing up, one adventure at a time.</p>
-    </section>
+  <main>
+    <section class="container">
+      <div class="page-header">
+        <span class="kicker">Camp Kids · The Characters</span>
+        <h1>Meet the <em>Camp Kids</em></h1>
+        <p class="subtitle">Every character. Every adventure. Every lesson.</p>
+        <div class="page-rule"></div>
+        <p class="desc">Each Camp Kid was hand-drawn by educator and artist Debby Moore to bring a specific skill or value to life.</p>
+      </div>
 
-    <section class="character-grid">
-      <article class="character-card">
-        <div class="portrait"><img src="characters/camper-kallen.svg" alt="Camper Kallen"></div>
-        <div class="name">Camper Kallen</div>
-        <div class="role">The Curious One</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/ranger-ross.svg" alt="Ranger Ross"></div>
-        <div class="name">Ranger Ross</div>
-        <div class="role">The Guide</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/nurse-nellie.svg" alt="Nurse Nellie"></div>
-        <div class="name">Nurse Nellie</div>
-        <div class="role">The Caretaker</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/buddy-bear.svg" alt="Buddy Bear"></div>
-        <div class="name">Buddy Bear</div>
-        <div class="role">The Loyal Friend</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/angler-alex.svg" alt="Angler Alex"></div>
-        <div class="name">Angler Alex</div>
-        <div class="role">The Patient One</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/canoe-kathy.svg" alt="Canoe Kathy"></div>
-        <div class="name">Canoe Kathy</div>
-        <div class="role">The Adventurer</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/diver-dave.svg" alt="Diver Dave"></div>
-        <div class="name">Diver Dave</div>
-        <div class="role">The Deep Thinker</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/camp-cookie.svg" alt="Camp Cookie"></div>
-        <div class="name">Camp Cookie</div>
-        <div class="role">The Nurturer</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/clipboard-cole.svg" alt="Clipboard Cole"></div>
-        <div class="name">Clipboard Cole</div>
-        <div class="role">The Planner</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/daring-dana.svg" alt="Daring Dana"></div>
-        <div class="name">Daring Dana</div>
-        <div class="role">The Brave One</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/jig-jen.svg" alt="Jig Jen"></div>
-        <div class="name">Jig Jen</div>
-        <div class="role">The Spirited One</div>
-      </article>
-
-      <article class="character-card">
-        <div class="portrait"><img src="characters/scout-scooter.svg" alt="Scout Scooter"></div>
-        <div class="name">Scout Scooter</div>
-        <div class="role">The Explorer</div>
-      </article>
+      <div class="char-grid">
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/camper-kallen.svg" alt="Camper Kallen"></div>
+          <div class="char-name">Camper Kallen</div>
+          <div class="char-role">The Curious One</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/ranger-ross.svg" alt="Ranger Ross"></div>
+          <div class="char-name">Ranger Ross</div>
+          <div class="char-role">The Guide</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/nurse-nellie.svg" alt="Nurse Nellie"></div>
+          <div class="char-name">Nurse Nellie</div>
+          <div class="char-role">The Caretaker</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/buddy-bear.svg" alt="Buddy Bear"></div>
+          <div class="char-name">Buddy Bear</div>
+          <div class="char-role">The Loyal Friend</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/angler-alex.svg" alt="Angler Alex"></div>
+          <div class="char-name">Angler Alex</div>
+          <div class="char-role">The Patient One</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/canoe-kathy.svg" alt="Canoe Kathy"></div>
+          <div class="char-name">Canoe Kathy</div>
+          <div class="char-role">The Adventurer</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/diver-dave.svg" alt="Diver Dave"></div>
+          <div class="char-name">Diver Dave</div>
+          <div class="char-role">The Deep Thinker</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/camp-cookie.svg" alt="Camp Cookie"></div>
+          <div class="char-name">Camp Cookie</div>
+          <div class="char-role">The Nurturer</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/clipboard-cole.svg" alt="Clipboard Cole"></div>
+          <div class="char-name">Clipboard Cole</div>
+          <div class="char-role">The Planner</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/daring-dana.svg" alt="Daring Dana"></div>
+          <div class="char-name">Daring Dana</div>
+          <div class="char-role">The Brave One</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/jig-jen.svg" alt="Jig Jen"></div>
+          <div class="char-name">Jig Jen</div>
+          <div class="char-role">The Spirited One</div>
+        </div>
+        <div class="char-card">
+          <div class="char-thumb"><img src="characters/scout-scooter.svg" alt="Scout Scooter"></div>
+          <div class="char-name">Scout Scooter</div>
+          <div class="char-role">The Explorer</div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <a class="brand" href="index.html">
-        <img src="misc/camp-kids-badge.svg" alt="">
-        <span class="brand-text">The Camp Kids</span>
-      </a>
-      <div class="footer-links">
-        <a href="camps.html">Sign Up</a>
-        <a href="mailto:info@thecampkids.com">info@thecampkids.com</a>
-        <a href="https://instagram.com/thecampkids" target="_blank" rel="noopener">@thecampkids</a>
-      </div>
-      <div>© <span id="year"></span> The Camp Kids</div>
-    </div>
+    <div class="footer-mark">Camp Kids</div>
+    <div class="footer-tag">Elevating Expectations — EQ drives IQ</div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="camps.html">Summer Camps</a>
+      <a href="store.html">Store</a>
+      <a href="socials.html">Follow Along</a>
+      <a href="mailto:info@thecampkids.com">Contact</a>
+    </nav>
+    <div class="footer-copy">© <span id="year"></span> The Camp Kids · Created by Debby Moore · thecampkids.com</div>
   </footer>
 
   <script src="scripts.js"></script>

@@ -1,6 +1,6 @@
 {
   "name": "campkids-site",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "description": "The Camp Kids — static website",
   "scripts": {
