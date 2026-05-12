@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Follow Along — The Camp Kids</title>
+  <meta name="description" content="Follow The Camp Kids on Instagram and stay in the loop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="fireflies"></div>
+  <div class="trees"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="misc/camp-kids-badge.svg" alt="The Camp Kids badge">
+        <span class="brand-text">The Camp Kids</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="characters.html">Characters</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="camps.html">Camps</a>
+        <a href="store.html">Store</a>
+        <a href="socials.html">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-intro">
+      <span class="tagline">Stay Close</span>
+      <h1>Follow Along</h1>
+      <p>Behind the scenes, camp updates, new characters, classroom moments — we share the good stuff here.</p>
+    </section>
+
+    <section class="social-grid">
+      <a class="social-card" href="https://instagram.com/thecampkids" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </span>
+        <div class="platform">Instagram</div>
+        <div class="handle">@thecampkids</div>
+      </a>
+
+      <a class="social-card" href="mailto:info@thecampkids.com">
+        <span class="icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </span>
+        <div class="platform">Email</div>
+        <div class="handle">info@thecampkids.com</div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand" href="index.html">
+        <img src="misc/camp-kids-badge.svg" alt="">
+        <span class="brand-text">The Camp Kids</span>
+      </a>
+      <div class="footer-links">
+        <a href="camps.html">Sign Up</a>
+        <a href="mailto:info@thecampkids.com">info@thecampkids.com</a>
+        <a href="https://instagram.com/thecampkids" target="_blank" rel="noopener">@thecampkids</a>
+      </div>
+      <div>© <span id="year"></span> The Camp Kids</div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

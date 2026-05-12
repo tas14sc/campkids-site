@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Concepts — The Camp Kids</title>
+  <meta name="description" content="The five core concepts of the Camp Kids curriculum — emotional intelligence tools for kids, taught through story and adventure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="fireflies"></div>
+  <div class="trees"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="misc/camp-kids-badge.svg" alt="The Camp Kids badge">
+        <span class="brand-text">The Camp Kids</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="characters.html">Characters</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="camps.html">Camps</a>
+        <a href="store.html">Store</a>
+        <a href="socials.html">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-intro">
+      <span class="tagline">The Curriculum</span>
+      <h1>The Concepts</h1>
+      <p>Five big ideas at the heart of the Camp Kids way — frameworks that turn complicated feelings into something a child can name, hold, and use.</p>
+    </section>
+
+    <section class="concept-list">
+
+      <article class="concept">
+        <div class="concept-art">
+          <img src="concepts/physics-of-feeling-tm.svg" alt="The Physics of Feeling">
+        </div>
+        <div class="concept-body">
+          <span class="concept-tag">Concept 01</span>
+          <h3>The Physics of Feeling<span class="tm">™</span></h3>
+          <p>Emotions move, and they follow patterns. When kids understand how feelings rise, peak, and pass — like waves on a lake — they stop fearing them and start working with them.</p>
+        </div>
+      </article>
+
+      <article class="concept">
+        <div class="concept-art">
+          <img src="concepts/mindful-to-manage-tm.svg" alt="Mindful to Manage">
+        </div>
+        <div class="concept-body">
+          <span class="concept-tag">Concept 02</span>
+          <h3>Mindful to Manage<span class="tm">™</span></h3>
+          <p>You can't control what you can't see. We teach kids to notice their feelings first — the small clues in the body and mind — so they can choose their response instead of being swept away by it.</p>
+        </div>
+      </article>
+
+      <article class="concept">
+        <div class="concept-art">
+          <img src="concepts/eq-cake-tm.svg" alt="The EQ Cake">
+        </div>
+        <div class="concept-body">
+          <span class="concept-tag">Concept 03</span>
+          <h3>The EQ Cake<span class="tm">™</span></h3>
+          <p>Emotional intelligence isn't one skill — it's a stack. Layer by layer, kids build self-awareness, self-management, empathy, and connection. Every layer matters.</p>
+        </div>
+      </article>
+
+      <article class="concept">
+        <div class="concept-art">
+          <img src="concepts/diver-dave-tm.svg" alt="Diver Dave">
+        </div>
+        <div class="concept-body">
+          <span class="concept-tag">Concept 04</span>
+          <h3>Diver Dave<span class="tm">™</span></h3>
+          <p>Some feelings live deep below the surface. Diver Dave teaches kids how to go gently into the harder emotions — the ones we tend to hide — and come back up with treasure.</p>
+        </div>
+      </article>
+
+      <article class="concept">
+        <div class="concept-art">
+          <img src="concepts/troubles-to-treasure-tm.svg" alt="Troubles to Treasure">
+        </div>
+        <div class="concept-body">
+          <span class="concept-tag">Concept 05</span>
+          <h3>Troubles to Treasure<span class="tm">™</span></h3>
+          <p>Every challenge carries something worth keeping. We help kids learn how to look at the hard moments — disappointment, conflict, fear — and find the lesson, the strength, the treasure on the other side.</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand" href="index.html">
+        <img src="misc/camp-kids-badge.svg" alt="">
+        <span class="brand-text">The Camp Kids</span>
+      </a>
+      <div class="footer-links">
+        <a href="camps.html">Sign Up</a>
+        <a href="mailto:info@thecampkids.com">info@thecampkids.com</a>
+        <a href="https://instagram.com/thecampkids" target="_blank" rel="noopener">@thecampkids</a>
+      </div>
+      <div>© <span id="year"></span> The Camp Kids</div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
