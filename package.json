@@ -293,13 +293,13 @@
 
 <!-- ── NAV ── -->
 <nav>
-  <a class="nav-left" href="#">
+  <a class="nav-left" href="index.html">
     <img class="nav-patch" src="patch.png" alt="Camp Kids patch" />
     <span class="nav-wordmark">Camp Kids</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#world">The World</a></li>
-    <li><a href="characters.html">Meet the Camp Kids</a></li>
+    <li><a href="index.html" class="active">Home Camp</a></li>
+    <li><a href="characters.html">The Camp Kids</a></li>
     <li><a href="camps.html">Summer Camps</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#social">Follow Along</a></li>
