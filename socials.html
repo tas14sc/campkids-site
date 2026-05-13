@@ -1,89 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Follow Along — The Camp Kids</title>
-  <meta name="description" content="Follow The Camp Kids on Instagram and stay in the loop with camp updates, classroom moments, and more.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
-</head>
-<body>
-  <div class="sky"></div>
-  <div class="fireflies"></div>
-  <div class="trees"></div>
+# The Camp Kids — Website
 
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html">
-        <img src="misc/camp-kids-badge.svg" alt="Camp Kids patch">
-        <span class="brand-text">Camp Kids</span>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <nav class="links">
-        <a href="index.html">Home</a>
-        <a href="characters.html">Characters</a>
-        <a href="concepts.html">Concepts</a>
-        <a href="camps.html">Camps</a>
-        <a href="store.html">Store</a>
-        <a href="socials.html" class="active">Socials</a>
-      </nav>
-    </div>
-  </header>
+Static site for [thecampkids.com](https://www.thecampkids.com).
+Deployed via Railway from this GitHub repo.
 
-  <main class="container">
-    <div class="page-header">
-      <span class="kicker">Stay Close</span>
-      <h1>Follow <em>Along</em></h1>
-      <p class="subtitle">Behind the scenes, camp updates, classroom moments.</p>
-      <div class="page-rule"></div>
-      <p class="desc">We share the good stuff here. Follow along on Instagram or reach out by email any time.</p>
-    </div>
+## Pages
 
-    <div class="social-grid">
-      <a class="social-card" href="https://instagram.com/thecampkids" target="_blank" rel="noopener">
-        <span class="icon">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </span>
-        <div class="platform">Instagram</div>
-        <div class="handle">@thecampkids</div>
-      </a>
+- `index.html` — Home: hero with group illustration, Debby quote + classroom photo collage
+- `characters.html` — 12 character cards, each opens a modal with their bio
+- `concepts.html` — Big EQ Treasure Map with 4 clickable islands + 6 Camp Kids Connection flyer cards
+- `camps.html` — Summer camp flyer + embedded Google Form signup
+- `store.html` — The Camp Kids Outpost (coming soon)
+- `socials.html` — Instagram + email contact with Camper Kallen
 
-      <a class="social-card" href="mailto:info@thecampkids.com">
-        <span class="icon">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </span>
-        <div class="platform">Email</div>
-        <div class="handle">info@thecampkids.com</div>
-      </a>
-    </div>
-  </main>
+## Branding
 
-  <footer class="site-footer">
-    <div class="footer-mark">Camp Kids</div>
-    <div class="footer-tag">Elevating Expectations — EQ drives IQ</div>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="characters.html">Characters</a>
-      <a href="concepts.html">Concepts</a>
-      <a href="camps.html">Summer Camps</a>
-      <a href="store.html">Store</a>
-      <a href="mailto:info@thecampkids.com">Contact</a>
-    </nav>
-    <div class="footer-copy">© <span id="year"></span> The Camp Kids · Created by Debby Moore · thecampkids.com</div>
-  </footer>
+- **Fonts:** Boogaloo (headlines), Nunito (body), Lora italic (red accents)
+- **Palette:** Forest green, parchment cream, accent red, tan
+- **Atmosphere:** Stars, fireflies, tree silhouettes across all pages
 
-  <script src="scripts.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+## Structure
+
+```
+campkids-site/
+├── index.html
+├── characters.html
+├── concepts.html
+├── camps.html
+├── store.html
+├── socials.html
+├── styles.css         ← shared stylesheet (1700+ lines, all pages read from it)
+├── scripts.js         ← shared JS (atmosphere, mobile nav, 3 modal systems)
+├── package.json
+├── railway.json
+├── .gitignore
+├── README.md
+├── characters/        ← 12 character SVGs
+├── concepts/          ← 5 concept SVGs (currently unused on site, saved for future)
+├── connections/       ← 6 Camp Kids Connection flyer PNGs
+└── misc/              ← patch badge, group scene, treasure map, classroom photo, camps flyer
+```
+
+## Deploy
+
+Push to `main` → Railway auto-redeploys in ~60 seconds.
+
+## Local preview
+
+```bash
+npx serve .
+```

@@ -1,15 +1,200 @@
-{
-  "name": "campkids-site",
-  "version": "3.0.0",
-  "private": true,
-  "description": "The Camp Kids — static website",
-  "scripts": {
-    "start": "serve . -l $PORT"
-  },
-  "dependencies": {
-    "serve": "^14.2.1"
-  },
-  "engines": {
-    "node": ">=18"
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Concepts — The Camp Kids</title>
+  <meta name="description" content="Step into The Camp Kids world, where simple models turn complex social and emotional concepts into something every child can name, hold, and use.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="fireflies"></div>
+  <div class="trees"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="misc/camp-kids-badge.svg" alt="Camp Kids patch">
+        <span class="brand-text">The Camp Kids</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="characters.html">Characters</a>
+        <a href="concepts.html" class="active">Concepts</a>
+        <a href="camps.html">Camps</a>
+        <a href="store.html">Outpost</a>
+        <a href="socials.html">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="page-header">
+        <span class="kicker">The Camp Kids · The Curriculum</span>
+        <h1>The Concepts</h1>
+        <p class="subtitle subtitle-red">Step into The Camp Kids world, where simple models turn complex social and emotional concepts into something every child can name, hold, and use.</p>
+      </div>
+
+      <!-- ── EQ TREASURE MAP with clickable quadrants ── -->
+      <div class="map-section">
+        <span class="kicker map-kicker">Click an Island to Explore</span>
+        <h2 class="map-title">The EQ Treasure Map</h2>
+
+        <div class="treasure-map-wrap">
+          <img class="treasure-map-img" src="misc/eq-treasure-map.svg" alt="The EQ Treasure Map showing four islands">
+
+          <button class="map-quadrant q-redfish"
+            data-island="Redfish Island"
+            data-theme="Self-Awareness"
+            data-pos="top-left"
+            data-desc="Camp Cookie starts us on our journey to Redfish Island to discover what we do well, and what we may need to improve. Each of us has a wide range of feelings that need to be managed — and that begins with knowing them."
+            aria-label="Redfish Island — Self-Awareness"></button>
+
+          <button class="map-quadrant q-evergreen"
+            data-island="Evergreen Island"
+            data-theme="Social Awareness"
+            data-pos="top-right"
+            data-desc="On Evergreen Island we search for Social Awareness. We are reminded to look beyond ourselves and find the talents and skills of others — and to show kindness in how we respond to their feelings."
+            aria-label="Evergreen Island — Social Awareness"></button>
+
+          <button class="map-quadrant q-coral"
+            data-island="Coral Cove Island"
+            data-theme="Self-Management"
+            data-pos="bottom-left"
+            data-desc="On Coral Cove Island we dig deep to discover the skills to control our strengths and weaknesses. We call it Mindful to Manage — learning how to listen, explore choices, and think before we act."
+            aria-label="Coral Cove Island — Self-Management"></button>
+
+          <button class="map-quadrant q-deepblue"
+            data-island="Deep Blue Island"
+            data-theme="Social Skills"
+            data-pos="bottom-right"
+            data-desc="On Deep Blue Island we find Social Skills. We explore how we work together to make life better for everyone — sharing our skills and talents, because we are stronger together."
+            aria-label="Deep Blue Island — Social Skills"></button>
+        </div>
+      </div>
+
+      <!-- ── CAMP KIDS CONNECTION cards ── -->
+      <div class="connections-section">
+        <span class="kicker">The Camp Kids Connection · Click to Open</span>
+        <h2 class="connections-title">The Journey, Page by Page</h2>
+        <p class="connections-lead">Six guides that walk through the full Camp Kids social &amp; emotional learning journey.</p>
+
+        <div class="connection-grid">
+          <button class="conn-card"
+            data-img="connections/01-introduction.png"
+            data-title="Introduction"
+            data-subtitle="Introduction to Social &amp; Emotional Learning">
+            <div class="conn-thumb"><img src="connections/01-introduction.png" alt="Introduction"></div>
+            <div class="conn-meta">
+              <span class="conn-num">01</span>
+              <span class="conn-name">Introduction</span>
+            </div>
+          </button>
+
+          <button class="conn-card"
+            data-img="connections/02-self-awareness.png"
+            data-title="Self-Awareness"
+            data-subtitle="Learning about Self Awareness · Redfish Island">
+            <div class="conn-thumb"><img src="connections/02-self-awareness.png" alt="Self-Awareness"></div>
+            <div class="conn-meta">
+              <span class="conn-num">02</span>
+              <span class="conn-name">Self-Awareness</span>
+            </div>
+          </button>
+
+          <button class="conn-card"
+            data-img="connections/03-self-management.png"
+            data-title="Self-Management"
+            data-subtitle="Learning about Self-Management · Coral Cove Island">
+            <div class="conn-thumb"><img src="connections/03-self-management.png" alt="Self-Management"></div>
+            <div class="conn-meta">
+              <span class="conn-num">03</span>
+              <span class="conn-name">Self-Management</span>
+            </div>
+          </button>
+
+          <button class="conn-card"
+            data-img="connections/04-social-awareness.png"
+            data-title="Social Awareness"
+            data-subtitle="Learning about Social Awareness · Evergreen Island">
+            <div class="conn-thumb"><img src="connections/04-social-awareness.png" alt="Social Awareness"></div>
+            <div class="conn-meta">
+              <span class="conn-num">04</span>
+              <span class="conn-name">Social Awareness</span>
+            </div>
+          </button>
+
+          <button class="conn-card"
+            data-img="connections/05-social-skills.png"
+            data-title="Social Skills"
+            data-subtitle="Learning about Social Skills · Deep Blue Island">
+            <div class="conn-thumb"><img src="connections/05-social-skills.png" alt="Social Skills"></div>
+            <div class="conn-meta">
+              <span class="conn-num">05</span>
+              <span class="conn-name">Social Skills</span>
+            </div>
+          </button>
+
+          <button class="conn-card"
+            data-img="connections/06-wrap-up.png"
+            data-title="Wrap Up"
+            data-subtitle="Moving Forward · The Treasure of Social &amp; Emotional Learning">
+            <div class="conn-thumb"><img src="connections/06-wrap-up.png" alt="Moving Forward"></div>
+            <div class="conn-meta">
+              <span class="conn-num">06</span>
+              <span class="conn-name">Moving Forward</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── ISLAND MODAL (treasure map quadrant) ── -->
+  <div class="island-modal-backdrop" id="islandModal" aria-hidden="true" role="dialog">
+    <div class="island-modal" role="document">
+      <button class="island-modal-close" aria-label="Close">×</button>
+      <div class="island-modal-zoom"></div>
+      <div class="island-modal-body">
+        <div class="island-modal-theme"></div>
+        <h2 class="island-modal-name"></h2>
+        <div class="island-modal-divider"></div>
+        <p class="island-modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONNECTION MODAL (full flyer) ── -->
+  <div class="conn-modal-backdrop" id="connModal" aria-hidden="true" role="dialog">
+    <div class="conn-modal" role="document">
+      <button class="conn-modal-close" aria-label="Close">×</button>
+      <div class="conn-modal-header">
+        <span class="conn-modal-title"></span>
+        <span class="conn-modal-subtitle"></span>
+      </div>
+      <img class="conn-modal-img" src="" alt="">
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-mark">The Camp Kids</div>
+    <div class="footer-tag">Elevating Expectations — EQ drives IQ</div>
+    <div class="footer-contact">
+      <a href="https://instagram.com/thecampkids" target="_blank" rel="noopener">@thecampkids</a>
+      <span class="dot">·</span>
+      <a href="mailto:info@thecampkids.com">info@thecampkids.com</a>
+    </div>
+    <div class="footer-copy">© <span id="year"></span> The Camp Kids · Created by Debby Moore · thecampkids.com</div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
