@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
+  <link rel="preload" href="misc/camp-kids-group.svg" as="image" type="image/svg+xml" fetchpriority="high">
 </head>
 <body>
   <div class="sky"></div>
@@ -43,7 +44,7 @@
   <main>
     <section class="container hero">
       <div class="hero-scene">
-        <img src="misc/camp-kids-group.svg" alt="The whole Camp Kids crew at the lakeside camp">
+        <img src="misc/camp-kids-group.svg" alt="The whole Camp Kids crew at the lakeside camp" fetchpriority="high" loading="eager" decoding="sync">
       </div>
       <h1>
         <span class="line1">Elevating Expectations</span>
