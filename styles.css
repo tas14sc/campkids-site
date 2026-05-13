@@ -725,6 +725,15 @@ main { padding-bottom: 5rem; }
   width: auto;
 }
 
+/* Rotate the four sideways concept images 90° clockwise.
+   diver-dave-tm.svg is intentionally not in this list — it's already upright. */
+.concept-art img[src*="physics-of-feeling"],
+.concept-art img[src*="mindful-to-manage"],
+.concept-art img[src*="eq-cake"],
+.concept-art img[src*="troubles-to-treasure"] {
+  transform: rotate(90deg);
+}
+
 .concept-body .kicker {
   color: var(--red);
   margin-bottom: 0.4rem;
