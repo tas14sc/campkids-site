@@ -1,87 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Camp Kids — Elevating Expectations</title>
-  <meta name="description" content="The Camp Kids — a summer camp and EQ curriculum led by educator Debby Moore. Where every camper learns to soar.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="misc/camp-kids-badge.svg">
-</head>
-<body>
-  <div class="sky"></div>
-  <div class="fireflies"></div>
-  <div class="trees"></div>
-
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html">
-        <img src="misc/camp-kids-badge.svg" alt="Camp Kids patch">
-        <span class="brand-text">The Camp Kids</span>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <nav class="links">
-        <a href="index.html" class="active">Home</a>
-        <a href="characters.html">Characters</a>
-        <a href="concepts.html">Concepts</a>
-        <a href="camps.html">Camps</a>
-        <a href="store.html">Outpost</a>
-        <a href="socials.html">Socials</a>
-      </nav>
-    </div>
-  </header>
-
-  <a href="camps.html" class="signup-sticker" aria-label="Sign up for Summer Camp">
-    <span class="top">Sign up for</span>
-    <span class="main">Summer Camp!</span>
-    <span class="cta">Tap to Reserve →</span>
-  </a>
-
-  <main>
-    <section class="container hero">
-      <div class="hero-scene">
-        <img src="misc/camp-kids-group.svg" alt="The whole Camp Kids crew at the lakeside camp">
-      </div>
-      <h1>
-        <span class="line1">Elevating Expectations</span>
-        <span class="line2">with THE CAMP KIDS</span>
-      </h1>
-      <p class="hero-sub">Adventure-based education for elementary aged children.</p>
-    </section>
-
-    <section class="container">
-      <div class="quote-photo-band">
-        <figure class="quote-photo">
-          <img src="misc/debby-classroom.jpg" alt="Debby Moore in her Camp Kids classroom">
-          <figcaption>Mrs. Moore in her Camp Kids classroom</figcaption>
-        </figure>
-        <div class="quote-band">
-          <div class="quote-mark">"</div>
-          <blockquote>
-            If you can activate and captivate a child's soul and spirit, that then becomes the glue in which everything meaningful sticks and stays.
-          </blockquote>
-          <div class="accent-bar"></div>
-          <cite>Debby Moore · Creator of The Camp Kids</cite>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-mark">The Camp Kids</div>
-    <div class="footer-tag">Elevating Expectations — EQ drives IQ</div>
-    <div class="footer-contact">
-      <a href="https://instagram.com/thecampkids" target="_blank" rel="noopener">@thecampkids</a>
-      <span class="dot">·</span>
-      <a href="mailto:info@thecampkids.com">info@thecampkids.com</a>
-    </div>
-    <div class="footer-copy">© <span id="year"></span> The Camp Kids · Created by Debby Moore · thecampkids.com</div>
-  </footer>
-
-  <script src="scripts.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": { "builder": "NIXPACKS" },
+  "deploy": {
+    "startCommand": "npm start",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3
+  }
+}
