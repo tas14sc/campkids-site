@@ -789,6 +789,11 @@ main { padding-bottom: 5rem; }
   color: var(--red-warm);
 }
 
+/* Camps subtitle needs more room to stay on one line */
+.camps-hero .hero-sub {
+  max-width: 900px;
+}
+
 .flyer-band {
   margin: 2.5rem auto 4rem;
   max-width: 900px;
@@ -857,7 +862,8 @@ main { padding-bottom: 5rem; }
   width: 100%;
   border: 0;
   border-radius: 8px;
-  min-height: 1400px;
+  min-height: 1800px;
+  background: var(--cream-bright);
 }
 
 .contact-strip {
